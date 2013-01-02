@@ -1,0 +1,102 @@
+html, * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #000000;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+a, a:visited, a:active, a:hover {
+    text-decoration: none;
+    color: #336699;
+}
+
+.post-title {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.post-categories {
+    color: #666;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.post-date {
+    color: #999;
+}
+
+ul.posts li {
+    margin: 0.5em 0;
+    display: block;
+}
+
+div.metabox {
+    width: 15em;
+    float: right;
+    background: #999;
+    color: white;
+    padding: 10px;
+}
+
+div.metabox div.classname {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+div.metabox div.semester {
+    font-size: 22px;
+}
+
+div.metabox div.email {
+    margin: 10px 0;
+}
+
+div.metabox div.email a {
+    color: white;
+}
+
+div.metabox div.chat {
+    margin: 10px 0;
+}
+
+div.license {
+    font-size: 12px;
+    clear: both;
+    padding-top: 20px;
+}
+
+div.metatop {
+    width: 20em;
+    margin-bottom: 20px;
+    float: right;
+    text-align: right;
+}
+
+div.metatop span.homelink {
+    margin-right: 10px;
+}
+
+div.metatop span.chat div#plupperButton {
+    width: 100px;
+}
+
+div.metatop span.chat div#plupperButton,
+div.metatop span.chat div#plupperButton img {
+    display: inline;
+}
+
+div.metatop span.chat div#plupperButton img {
+    margin-bottom: -3px;
+}
+
+@media only screen and (max-width: 480px) {
+    div.metabox {
+        float: none;
+    }
+}

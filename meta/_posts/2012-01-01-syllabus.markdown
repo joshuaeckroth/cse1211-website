@@ -1,0 +1,12 @@
+---
+layout: post
+title: Syllabus
+---
+
+# Syllabus
+
+This is the syllabus.
+
+## test
+
+blah

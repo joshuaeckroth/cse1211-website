@@ -4,45 +4,48 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
-    <div class="metabox">
-      <div class="classname">CSE 1211</div>
-      <div class="semester">Spring 2013</div>
-      <div class="email"><tt><a href="mailto:joshuaeckroth@gmail.com">joshuaeckroth@gmail.com</a></tt></div>
-      <div class="officehours">
-        Office hours (Bolz 118):
-        <br/>
-        Wed 12:30pm &ndash; 2:30pm
-        <br/>
-        Fri 12:30pm &ndash; 2:30pm
+    <div id="container">
+      <div class="metabox">
+        <div class="classname">CSE 1211</div>
+        <div class="semester">Spring 2013</div>
+        <div class="email"><tt><a href="mailto:joshuaeckroth@gmail.com">joshuaeckroth@gmail.com</a></tt></div>
+        <div class="officehours">
+          Office hours (Bolz 118):
+          <br/>
+          Wed 12:30pm &ndash; 2:30pm
+          <br/>
+          Fri 12:30pm &ndash; 2:30pm
+        </div>
+        <div class="chat">
+          <!-- Plupper Button -->
+          <div id="plupperButton"></div>
+          <!-- End of Plupper Button Code -->
+        </div>
       </div>
-      <div class="chat">
-        <!-- Plupper Button -->
-        <div id="plupperButton"></div>
-        <!-- End of Plupper Button Code -->
-      </div>
-    </div>
-    <ul class="posts">
-      {% for p in site.posts sort_by:title order:descending %}
-      <li>
-        <span class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></span>
-        <span class="post-categories">[{{ p.categories }}]</span>
-        <span class="post-date">added {{ p.date | date: "%d %B %Y"  }}</span>
-      </li>
-      {% endfor %}
-    </ul>
+      <ul class="posts">
+        {% for p in site.posts sort_by:title order:descending %}
+        <li>
+          <span class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></span>
+          <span class="post-categories">[{{ p.categories }}]</span>
+          <span class="post-date">added {{ p.date | date: "%d %B %Y" }}</span>
+          <span class="post-due">{% if p.due %}due {{ p.due }}{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
 
-    <div class="license">
-      <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">CSE 1211 material</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://cse1211.artifice.cc" property="cc:attributionName" rel="cc:attributionURL">Joshua Eckroth</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Source code for this website available at <a href="https://github.com/joshuaeckroth/cse1211-website-sp2013/tree/gh-pages">GitHub</a>.
+      <div class="license">
+        <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">CSE 1211 material</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://cse1211.artifice.cc" property="cc:attributionName" rel="cc:attributionURL">Joshua Eckroth</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Source code for this website available at <a href="https://github.com/joshuaeckroth/cse1211-website-sp2013/tree/gh-pages">GitHub</a>.
+      </div>
+      
+      <!-- Plupper Tracking Code -->
+      <script src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript"
+              src="https://static.plupper.com/js/plupper.js"></script>
+      <script type="text/javascript">
+        plupper.init("joshuaeckroth@plupper.com");
+        plupper.enableCobrowsing();
+      </script>
+      <!-- End of Plupper Tracking Code -->
     </div>
-    
-    <!-- Plupper Tracking Code -->
-    <script src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript"
-            src="https://static.plupper.com/js/plupper.js"></script>
-    <script type="text/javascript">
-      plupper.init("joshuaeckroth@plupper.com");
-      plupper.enableCobrowsing();
-    </script>
-    <!-- End of Plupper Tracking Code -->
   </body>
 </html>

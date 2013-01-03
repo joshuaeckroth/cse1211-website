@@ -11,6 +11,15 @@ body {
     padding: 20px;
 }
 
+#container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+p {
+    margin: 1em 0;
+}
+
 a, a:visited, a:active, a:hover {
     text-decoration: none;
     color: #336699;
@@ -29,6 +38,11 @@ a, a:visited, a:active, a:hover {
 
 .post-date {
     color: #999;
+    margin-right: 10px;
+}
+
+.post-due {
+    color: #666;
 }
 
 ul.posts li {
@@ -100,3 +114,13 @@ div.metatop span.chat div#plupperButton img {
         float: none;
     }
 }
+
+table {
+    margin: 20px 0;
+    border: 1px solid #999;
+}
+
+td {
+    padding: 5px;
+}
+

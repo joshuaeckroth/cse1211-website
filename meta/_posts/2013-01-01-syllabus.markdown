@@ -37,6 +37,10 @@ involves some programming, and may also involve some written answers.
 Submit your lab by adding your files to the Carmen dropbox. Due dates
 are listed on the home page of this site.
 
+Late work is penalized. Your maximum possible score on late work is
+70/100. You can turn it in at any time (until the last day of
+class). Just submit late work to the appropriate dropbox.
+
 ## Extra credit
 
 I want you to learn how to use the internet to learn

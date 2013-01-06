@@ -1,0 +1,110 @@
+---
+layout: post
+title: Syllabus
+---
+
+# Syllabus
+
+By the end of this class, you should be able to:
+
+  - Write small interactive programs using the Processing language.
+  
+  - Have experience learning a new programming language by utilizing
+    internet resources.
+    
+The first goal should be unsurprising. The second goal ensures you can
+learn a new technical skill, perhaps one more relevant to you, in your
+future. You may well forget how to program in Processing, but I want
+to ensure you do not lose the skill of learning new technical
+material.
+
+## Attendance
+
+You are required to attend class once a week for lectures, which occur
+only on Mondays. Wednesday and Friday are lab days, in which I will be
+walking around answering questions. Your attendance grade is
+calculated as the percentage of Monday lectures that you attend (not
+counting excused absences; just email me). You are also required to
+attend the group presentations day (see below), which occurs on the
+normal final exam day during finals' week (we will not have an exam
+that day).
+
+## Labs
+
+We'll generally have one lab per week. A lab assignment always
+involves some programming, and may also involve some written answers.
+
+Submit your lab by adding your files to the Carmen dropbox. Due dates
+are listed on the home page of this site.
+
+## Extra credit
+
+I want you to learn how to use the internet to learn
+programming. Thus, I will be offering extra credit periodically that
+asks you to find useful material on the web and give me the link, or
+ask a question in a forum and give me the link and answer. Everyone in
+the class benefits from your findings since I will make the links
+available to everyone.
+
+## Tests
+
+We have three short tests, which take place on Mondays (in the
+classroom). We have no "final exam." The tests are hand-written, so
+you don't use a computer. You won't be asked to write programs. Test
+dates are on the home page.
+
+## Group project
+
+During the last several weeks of the class, you will not be working on
+labs but rather on a group project. Each group has two members. You
+share a grade for the project. Details about project requirements will
+be provided later. You will probably be asked to create a small
+interactive game.
+
+Rather than have a final exam during finals' week, we will have group
+presentations.
+
+You are required to attend the group presentations. Part of your
+attendance grade depends on attending these presentations.
+
+## Grading
+
+<table>
+<tr><td>Labs</td><td>40%</td></tr>
+<tr><td>Test 1</td><td>10%</td></tr>
+<tr><td>Test 2</td><td>10%</td></tr>
+<tr><td>Test 3</td><td>10%</td></tr>
+<tr><td>Group project</td><td>20%</td></tr>
+<tr><td>Attendance (Mondays + group pres.)</td><td>10%</td></tr>
+</table>
+
+## Academic misconduct policy
+
+I want you to use the internet, and each other, to learn Processing
+but more to learn how to learn. Outside the classroom, everyone refers
+to the internet and colleagues (and sometimes books) to learn new
+technical material.
+
+However, when your lab assignments, you must indicate any code that
+you copied, including the source of the code. You are required to
+contribute most of the code in your lab; do not turn in a lab mostly
+written by other people. The labs for this class are new, so you
+should not be able to find complete answers online.
+
+I reserve the right to give you a 0% on an assignment if I believe it
+is clear that you copied most or all of the answers.
+
+During tests, there is no tolerance for copying answers or
+collaborating (obviously).
+
+Violators of these policies will be referred to the OSU Committee on
+Academic Misconduct (COAM).
+
+## Disability statement
+
+Any student who feels he or she may need an accommodation based on the
+impact of a disability should contact me privately to discuss your
+specific needs. You should also contact the Office for Disability
+Services at 614-292-3307 in room 150 Pomerene Hall to coordinate
+reasonable accommodations for documented disabilities.
+

@@ -5,7 +5,7 @@ html, * {
 
 body {
     color: #000000;
-    font-size: 16px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     padding: 20px;
@@ -16,13 +16,32 @@ body {
     max-width: 1000px;
 }
 
-p {
+h1 {
+    margin-bottom: 1em;
+}
+
+h2, h3, h4, h5, h6 {
     margin: 1em 0;
+}
+
+p {
+    margin: 0.8em 0;
+}
+
+ul {
+    margin-left: 2em;
 }
 
 a, a:visited, a:active, a:hover {
     text-decoration: none;
     color: #336699;
+}
+
+div.metabox a,
+div.metabox a:visited,
+div.metabox a:active,
+div.metabox a:hover {
+    color: #113b63;
 }
 
 .post-title {
@@ -69,10 +88,6 @@ div.metabox div.semester {
 
 div.metabox div.email {
     margin: 10px 0;
-}
-
-div.metabox div.email a {
-    color: white;
 }
 
 div.metabox div.chat {

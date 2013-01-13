@@ -57,28 +57,29 @@ classroom). We have no "final exam." The tests are hand-written, so
 you don't use a computer. You won't be asked to write programs. Test
 dates are on the home page.
 
-## Group project
+## Group projects
 
-During the last several weeks of the class, you will not be working on
-labs but rather on a group project. Each group has two members. You
+You will have two group projects. Each group has two members. You
 share a grade for the project. Details about project requirements will
 be provided later. You will probably be asked to create a small
-interactive game.
+interactive game in both cases (the first project will be simpler).
 
 Rather than have a final exam during finals' week, we will have group
-presentations.
+presentations for the second, larger project.
 
-You are required to attend the group presentations. Part of your
-attendance grade depends on attending these presentations.
+You are required to attend the group presentations at the end of the
+semester. Part of your attendance grade depends on attending these
+presentations.
 
 ## Grading
 
 <table>
-<tr><td>Labs</td><td>40%</td></tr>
+<tr><td>Labs</td><td>30%</td></tr>
 <tr><td>Test 1</td><td>10%</td></tr>
 <tr><td>Test 2</td><td>10%</td></tr>
 <tr><td>Test 3</td><td>10%</td></tr>
-<tr><td>Group project</td><td>20%</td></tr>
+<tr><td>Group project 1</td><td>10%</td></tr>
+<tr><td>Group project 2</td><td>20%</td></tr>
 <tr><td>Attendance (Mondays + group pres.)</td><td>10%</td></tr>
 </table>
 

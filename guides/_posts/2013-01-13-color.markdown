@@ -1,0 +1,34 @@
+---
+layout: post
+title: Color
+---
+
+# Color
+
+Read
+
+- [Color tutorial](http://processing.org/learning/color/) on processing.org
+
+If you want more info, also try
+
+- [Video: Shades of gray and colors, frameRate()](http://www.funprogramming.org/4-Shades-of-gray-and-colors-frameRate.html)
+
+## Important functions
+
+- [`background()`](http://processing.org/reference/background_.html)
+- [`fill()`](http://processing.org/reference/fill_.html) and
+  [`noFill()`](http://processing.org/reference/noFill_.html)
+- [`stroke()`](http://processing.org/reference/stroke_.html) and [`noStroke()`](http://processing.org/reference/noStroke_.html)
+- [`color()`](http://processing.org/reference/color_.html)
+
+## On test 1
+
+You will see questions like the following:
+
+- what is the code to set the fill color to white/black/very-light-gray?
+- what is the code to set the fill color 50% transparent dark red?
+- what is the code to set the background color to bright
+  yellow/purple/cyan? (the three simplest combinations of two colors)
+
+Some of these questions have a range of valid answers since, e.g.,
+"dark red" is open to some interpretation.

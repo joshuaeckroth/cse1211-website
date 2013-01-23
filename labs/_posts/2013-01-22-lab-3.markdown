@@ -1,0 +1,25 @@
+---
+layout: post
+title: Lab 3
+due: Jan 28, 11:59pm
+---
+
+# Lab 3
+
+Watch the videos animation 1 and animation 2.
+
+Create an interesting animation. Examples include,
+
+- shapes with colors that gradually change over time
+- rain drops on a window (random sizes, random positions, not always
+  perfect circles)
+- shapes that spiral towards the middle like a drain (requires use of
+  `rotate()`)
+- weird line patterns or something like glitch art
+
+You are required to have:
+
+- at least two variables to represent positions, or sizes, or colors, etc.
+- changing variable values in the `draw()` function
+- at least two kinds of shapes or lines/curves
+- colors

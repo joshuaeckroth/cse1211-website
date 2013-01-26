@@ -5,39 +5,64 @@
   </head>
   <body>
     <div id="container">
-      <div class="metabox">
-        <div class="classname">CSE 1211</div>
-        <div class="semester">Spring 2013</div>
-        <div class="email"><tt><a href="mailto:joshuaeckroth@gmail.com">joshuaeckroth@gmail.com</a></tt></div>
-        <div class="officehours">
-          Office hours (Bolz 118):
-          <br/>
-          &nbsp; Mon 9:30am &ndash; 10:30am
-          <br/>
-          &nbsp; Mon 11:30am &ndash; 12:30pm
-          <br/>
-          &nbsp; Fri 9:30am &ndash; 10:30am
-          <br/>
-          &nbsp; Fri 11:30am &ndash; 12:30pm
-          <br/>
-          <a href="http://www.cse.ohio-state.edu/cs/labs/hours.shtml">Caldwell lab hours</a>
-        </div>
-        <div class="chat">
-          <!-- Plupper Button -->
-          <div id="plupperButton"></div>
-          <!-- End of Plupper Button Code -->
-        </div>
-      </div>
-      <ul class="posts">
-        {% for p in site.posts sort_by:title order:descending %}
-        <li>
-          <span class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></span>
-          <span class="post-categories">[{{ p.categories }}]</span>
-          <span class="post-date">added {{ p.date | date: "%d %B %Y" }}</span>
-          <span class="post-due">{% if p.due %}due {{ p.due }}{% endif %}</span>
-        </li>
-        {% endfor %}
-      </ul>
+      <table id="index">
+        <tr>
+          <td>
+            <ul class="posts">
+              {% for p in site.categories.videos sort_by:title order:descending %}
+              <li>
+                <div class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></div>
+                <div class="post-date">added {{ p.date | date: "%d %b %Y" }}</div>
+              </li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td>
+            <ul class="posts">
+              {% for p in site.categories.labs sort_by:title order:descending %}
+              <li>
+                <div class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></div>
+                <div class="post-due">{% if p.due %}due {{ p.due }}{% endif %}</div>
+                <div class="post-date">added {{ p.date | date: "%d %b %Y" }}</div>
+              </li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td>
+            <ul class="posts">
+              {% for p in site.categories.guides sort_by:title order:descending %}
+              <li>
+                <div class="post-title"><a href="{{ p.url }}">{{ p.title }}</a></div>
+                <div class="post-date">added {{ p.date | date: "%d %b %Y" }}</div>
+              </li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td class="metabox">
+            <div class="classname">CSE 1211</div>
+            <div class="semester">Spring 2013</div>
+            <div class="email"><tt><a href="mailto:joshuaeckroth@gmail.com">joshuaeckroth@gmail.com</a></tt></div>
+            <div class="officehours">
+              Office hours (Bolz 118):
+              <br/>
+              &nbsp; Mon 9:30am &ndash; 10:30am
+              <br/>
+              &nbsp; Mon 11:30am &ndash; 12:30pm
+              <br/>
+              &nbsp; Fri 9:30am &ndash; 10:30am
+              <br/>
+              &nbsp; Fri 11:30am &ndash; 12:30pm
+              <br/>
+              <a href="http://www.cse.ohio-state.edu/cs/labs/hours.shtml">Caldwell lab hours</a>
+            </div>
+            <div class="chat">
+              <!-- Plupper Button -->
+              <div id="plupperButton"></div>
+              <!-- End of Plupper Button Code -->
+            </div>
+          </td>
+        </tr>
+      </table>
 
       <div class="license">
         <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">CSE 1211 material</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://cse1211.artifice.cc" property="cc:attributionName" rel="cc:attributionURL">Joshua Eckroth</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Source code for this website available at <a href="https://github.com/joshuaeckroth/cse1211-website-sp2013/tree/gh-pages">GitHub</a>.

@@ -13,7 +13,7 @@ body {
 
 #container {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 h1 {
@@ -37,15 +37,24 @@ a, a:visited, a:active, a:hover {
     color: #336699;
 }
 
-div.metabox a,
-div.metabox a:visited,
-div.metabox a:active,
-div.metabox a:hover {
+table#index {
+    border: none;
+}
+
+table#index td {
+    width: 25%;
+    vertical-align: top;
+}
+
+td.metabox a,
+td.metabox a:visited,
+td.metabox a:active,
+td.metabox a:hover {
     color: #113b63;
 }
 
 .post-title {
-    font-size: 26px;
+    font-size: 20px;
     margin-right: 10px;
 }
 
@@ -56,7 +65,7 @@ div.metabox a:hover {
 }
 
 .post-date {
-    color: #999;
+    color: #ccc;
     margin-right: 10px;
 }
 
@@ -69,28 +78,26 @@ ul.posts li {
     display: block;
 }
 
-div.metabox {
-    width: 15em;
-    float: right;
+td.metabox {
     background: #999;
     color: white;
     padding: 10px;
 }
 
-div.metabox div.classname {
+td.metabox div.classname {
     font-size: 32px;
     font-weight: bold;
 }
 
-div.metabox div.semester {
+td.metabox div.semester {
     font-size: 22px;
 }
 
-div.metabox div.email {
+td.metabox div.email {
     margin: 10px 0;
 }
 
-div.metabox div.chat {
+td.metabox div.chat {
     margin: 10px 0;
 }
 

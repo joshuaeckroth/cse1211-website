@@ -1,0 +1,26 @@
+---
+layout: post
+title: Lab 4
+due: Feb 1, 11:59pm
+---
+
+# Lab 4
+
+Watch the video about
+[keyboard input](/videos/2013-01-26-video-keyboard-input-1.html).
+
+Create a keyboard-controlled program. At least one object has to move
+based on keyboard input. Or, at least one object may appear or
+disappear, or change colors, based on keyboard input. Make at least
+four different kinds of responses, depending on which keys are
+pressed. You must check basic keys like `key == 'w'` and key codes
+like `keyCode == UP`.
+
+There is a big list of key codes at the
+[Java reference page](http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyEvent.html). Each
+item in that list starts `VK_`; just remove the `VK_` and you have the
+keycode. You may also find the Processing references useful:
+[keyPressed()](http://processing.org/reference/keyPressed_.html),
+[key](http://processing.org/reference/key.html), and
+[keyCode](http://processing.org/reference/keyCode.html).
+

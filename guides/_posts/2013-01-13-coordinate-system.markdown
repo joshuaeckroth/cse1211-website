@@ -24,11 +24,3 @@ If you want more info, also try
 - [`ellipse()`](http://processing.org/reference/ellipse_.html)
 - [`triangle()`](http://processing.org/reference/triangle_.html)
 
-## On test 1
-
-You will see questions like the following:
-
-- what is the code to draw a 4x4 square in the middle of a 50x50 window?
-- what is the code to draw a 4x4 square in the middle of a window of any size?
-- what is the code to draw an ellipse that touches the four edges of a window of any size?
-

@@ -6,7 +6,7 @@ due: Feb 8, 11:59pm
 
 # Lab 5
 
-Watch the video about mouse input (coming soon).
+Watch the [video about mouse input](/videos/2013-02-04-mouse-input-1.html).
 
 Create a program that responds to mouse movements and clicks. A
 response could be something moves, changes colors, etc.

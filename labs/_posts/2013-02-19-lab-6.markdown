@@ -8,8 +8,9 @@ due: Feb 25, 11:59pm
 
 Watch the videos about arrays:
 [arrays 1](/videos/2013-02-18-arrays-1.html),
-[arrays 2](/videos/2013-02-18-arrays-2.html), array utilities (coming
-soon), and [`for` loops](/videos/2013-02-20-for-loops.html).
+[arrays 2](/videos/2013-02-18-arrays-2.html),
+[array utilities](/videos/2013-02-23-array-utilities.html), and
+[`for` loops](/videos/2013-02-20-for-loops.html).
 
 Create a program that uses arrays and `for` loops.
 

@@ -1,0 +1,73 @@
+---
+layout: post
+title: Test 2 Guide
+---
+
+# Test 2 Guide
+
+You will see some questions like the following. The test is on paper,
+closed-notes.
+
+## Keyboard input
+
+- Write a `keyPressed()` function that prints the message "up" when
+  the up arrow key is pressed.
+  
+- Write a `keyPressed()` function that prints the message "x" when the
+  "x" key is pressed.
+  
+- Write a `keyPressed()` function that prints the message "left" when
+  either the left arrow key or "a" key is pressed.
+
+## Mouse input
+
+- Write a `mouseClicked()` function that prints the message "clicked"
+  whenever the left-mouse button is clicked.
+  
+- Write a `mouseClicked()` function that prints the message "hit!"
+  whenever the user clicks the mouse (any button) within a 10x10
+  rectangle with top-left coordinate 50,30.
+  
+- Suppose you are writing a `mouseDragged()` function, and want to
+  allow dragging a box with position "x" and "y" (variables). What is
+  the correct way to update the x-coordinate? (The y-coordinate would
+  require the same update.)
+  
+- What boolean variable allows you to determine in the `draw()`
+  function if the mouse is being clicked?
+  
+- Write an `if()` block that you could use in the `draw()` function
+  that prints the message "clicked" whenever the left-mouse button is
+  clicked.
+
+## Arrays and loops
+
+- Write a `for()` loop that prints the message "Yo" 100 times.
+
+- Write a `for()` loop that finds the product
+  `20*19*18*...*3*2*1`. Print the product once found.
+
+- Create an integer array of size 5, put some values in it, then write
+  a `for()` loop that finds the sum and prints it.
+  
+- Create a float array of size 5, put some values in it, then write
+  a `for()` loop that finds the minimum value and prints it.
+
+- Create an array of names of famous people, of size 5, put some
+  values in it, and print its contents in reverse.
+  
+- Create an array of any type, of size 5, put some values in it, then
+  expand the array by adding 3 more positions, and put values in those
+  new positions. Use an array function provided by Processing to do
+  this.
+  
+- Create two arrays of size 100, of any type (but the same
+  type). Don't bother putting values in them. Then, create a new array
+  that is the "concatenation" of the two (the first array followed by
+  the second array). Write a loop that prints the third array's
+  contents. Use an array function provided by Processing to do this.
+  
+- Create an array of integers, any size, don't bother putting values
+  in it, then sort the array. Use an array function provided by
+  Processing to do this.
+

@@ -11,8 +11,8 @@ title: "Video: Test 2 Guide Solutions"
 
 ## Keyboard input
 
-- Write a `keyPressed()` function that prints the message "up" when
-  the up arrow key is pressed.
+*Write a `keyPressed()` function that prints the message "up" when the
+up arrow key is pressed.*
   
 {% highlight java %}
 void keyPressed()
@@ -27,8 +27,8 @@ void keyPressed()
 }
 {% endhighlight %}
   
-- Write a `keyPressed()` function that prints the message "x" when the
-  "x" key is pressed.
+*Write a `keyPressed()` function that prints the message "x" when the
+ "x" key is pressed.*
   
 {% highlight java %}
 void keyPressed()
@@ -40,8 +40,8 @@ void keyPressed()
 }
 {% endhighlight %}
 
-- Write a `keyPressed()` function that prints the message "left" when
-  either the left arrow key or "a" key is pressed.
+*Write a `keyPressed()` function that prints the message "left" when
+ either the left arrow key or "a" key is pressed.*
   
 {% highlight java %}
 void keyPressed()
@@ -55,8 +55,8 @@ void keyPressed()
 
 ## Mouse input
 
-- Write a `mouseClicked()` function that prints the message "clicked"
-  whenever the left-mouse button is clicked.
+*Write a `mouseClicked()` function that prints the message "clicked"
+ whenever the left-mouse button is clicked.*
   
 {% highlight java %}
 void mouseClicked()
@@ -68,9 +68,9 @@ void mouseClicked()
 }
 {% endhighlight %}
   
-- Write a `mouseClicked()` function that prints the message "hit!"
-  whenever the user clicks the mouse (any button) within a 10x10
-  rectangle with top-left coordinate 50,30.
+*Write a `mouseClicked()` function that prints the message "hit!"
+ whenever the user clicks the mouse (any button) within a 10x10
+ rectangle with top-left coordinate 50,30.*
   
 {% highlight java %}
 void mouseClicked()
@@ -82,25 +82,25 @@ void mouseClicked()
 }
 {% endhighlight %}
   
-- Suppose you are writing a `mouseDragged()` function, and want to
-  allow dragging a box with position "x" and "y" (variables). What is
-  the correct way to update the x-coordinate? (The y-coordinate would
-  require the same update.)
+*Suppose you are writing a `mouseDragged()` function, and want to
+ allow dragging a box with position "x" and "y" (variables). What is
+ the correct way to update the x-coordinate? (The y-coordinate would
+ require the same update.)*
   
 {% highlight java %}
 x = x + (mouseX - pmouseX);
 {% endhighlight %}
   
-- What boolean variable allows you to determine in the `draw()`
-  function if the mouse is being clicked?
+*What boolean variable allows you to determine in the `draw()`
+ function if the mouse is being clicked?*
   
 {% highlight java %}
 mousePressed
 {% endhighlight %}
   
-- Write an `if()` block that you could use in the `draw()` function
-  that prints the message "clicked" whenever the left-mouse button is
-  clicked.
+*Write an `if()` block that you could use in the `draw()` function
+ that prints the message "clicked" whenever the left-mouse button is
+ clicked.*
   
 {% highlight java %}
 if(mousePressed && mouseButton == LEFT)
@@ -111,7 +111,7 @@ if(mousePressed && mouseButton == LEFT)
 
 ## Arrays and loops
 
-- Write a `for()` loop that prints the message "Yo" 100 times.
+*Write a `for()` loop that prints the message "Yo" 100 times.*
 
 {% highlight java %}
 for(int time = 1; time <= 100; time++)
@@ -120,8 +120,8 @@ for(int time = 1; time <= 100; time++)
 }
 {% endhighlight %}
 
-- Write a `for()` loop that finds the product
-  `20*19*18*...*3*2*1`. Print the product once found.
+*Write a `for()` loop that finds the product
+ `20*19*18*...*3*2*1`. Print the product once found.*
   
 {% highlight java %}
 int prod = 1;
@@ -136,8 +136,8 @@ println(prod);
 // should have used the 'long' variable type
 {% endhighlight %}
 
-- Create an integer array of size 5, put some values in it, then write
-  a `for()` loop that finds the sum and prints it.
+*Create an integer array of size 5, put some values in it, then write
+ a `for()` loop that finds the sum and prints it.*
   
 {% highlight java %}
 int[] arr = new int[5];
@@ -155,8 +155,8 @@ for(int i = 0; i < arr.length; i++)
 println(sum);
 {% endhighlight %}
   
-- Create a float array of size 5, put some values in it, then write
-  a `for()` loop that finds the minimum value and prints it.
+*Create a float array of size 5, put some values in it, then write a
+ `for()` loop that finds the minimum value and prints it.*
   
 {% highlight java %}
 float[] arr = new float[5];
@@ -177,8 +177,8 @@ for(int i = 0; i < arr.length; i++)
 println(min);
 {% endhighlight %}
 
-- Create an array of names of famous people, of size 5, put some
-  values in it, and print its contents in reverse.
+*Create an array of names of famous people, of size 5, put some
+ values in it, and print its contents in reverse.*
   
 {% highlight java %}
 String[] names = new String[5];
@@ -198,10 +198,10 @@ for(int i = names.length - 1; i >= 0; i--)
 println(reverse(names));
 {% endhighlight %}
   
-- Create an array of any type, of size 5, put some values in it, then
-  expand the array by adding 3 more positions, and put values in those
-  new positions. Use an array function provided by Processing to do
-  this.
+*Create an array of any type, of size 5, put some values in it, then
+ expand the array by adding 3 more positions, and put values in those
+ new positions. Use an array function provided by Processing to do
+ this.*
   
 {% highlight java %}
 boolean[] ps = new boolean[5];
@@ -220,11 +220,11 @@ ps[7] = true;
 println(ps);
 {% endhighlight %}
   
-- Create two arrays of size 100, of any type (but the same
-  type). Don't bother putting values in them. Then, create a new array
-  that is the "concatenation" of the two (the first array followed by
-  the second array). Write a loop that prints the third array's
-  contents. Use an array function provided by Processing to do this.
+*Create two arrays of size 100, of any type (but the same
+ type). Don't bother putting values in them. Then, create a new array
+ that is the "concatenation" of the two (the first array followed by
+ the second array). Write a loop that prints the third array's
+ contents. Use an array function provided by Processing to do this.*
   
 {% highlight java %}
 int[] arr1 = new int[100];
@@ -238,9 +238,9 @@ for(int i = 0; i < arr3.length; i++)
 }
 {% endhighlight %}
   
-- Create an array of integers, any size, don't bother putting values
-  in it, then sort the array. Use an array function provided by
-  Processing to do this.
+*Create an array of integers, any size, don't bother putting values
+ in it, then sort the array. Use an array function provided by
+ Processing to do this.*
 
 {% highlight java %}
 int[] arr = new int[9283];

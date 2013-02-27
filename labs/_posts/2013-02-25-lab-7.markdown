@@ -8,7 +8,8 @@ due: Mar 4, 11:59pm
 
 Watch the videos about arrays:
 [arrays 1](/videos/2013-02-18-arrays-1.html),
-[arrays 2](/videos/2013-02-18-arrays-2.html), 2d arrays (coming soon),
+[arrays 2](/videos/2013-02-18-arrays-2.html),
+[2d arrays](/videos/2013-02-26-2d-arrays.html),
 [array utilities](/videos/2013-02-23-array-utilities.html), and
 [`for` loops](/videos/2013-02-20-for-loops.html).
 

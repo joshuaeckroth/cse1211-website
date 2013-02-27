@@ -1,0 +1,60 @@
+---
+layout: post
+title: "Video: 2d arrays"
+---
+
+# Video: 2d arrays
+
+<div style="text-align: center">
+<iframe src="http://player.vimeo.com/video/60608975?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
+
+## Notes
+
+{% highlight java %}
+int[][] vals;
+
+void setup()
+{
+  vals = new int[5][3];
+  for(int i = 0; i < vals.length; i++)
+  {
+    for(int j = 0; j < vals[i].length; j++)
+    {
+      vals[i][j] = int(random(0, 5));
+    }
+  }
+  
+  size(500, 500);
+  noLoop();
+  background(0);
+}
+
+void draw()
+{
+  fill(255);
+  textSize(20);
+  
+  // show a grid of values
+  for(int i = 0; i < vals.length; i++)
+  {
+    for(int j = 0; j < vals[i].length; j++)
+    {
+      text(vals[i][j], j * 40 + 150, i * 40 + 150);
+    }
+  }
+  
+  // print a particular column
+  for(int i = 0; i < vals.length; i++)
+  {
+    println(vals[i][1]);
+  }
+  
+  // print a particular row
+  for(int j = 0; j < vals[2].length; j++)
+  {
+    println(vals[2][j]);
+  }
+}
+{% endhighlight %}
+

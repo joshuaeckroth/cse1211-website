@@ -1,0 +1,25 @@
+---
+layout: post
+title: Images
+---
+
+# Images
+
+Processing can do more than draw shapes. We can also load images and
+draw them at x,y locations. Actually, you can do a lot more with
+images, but we'll start with that.
+
+Read
+
+- about the [`PImage`](http://processing.org/reference/PImage.html) type
+  and the example of loading and displaying an image
+  
+- about the
+  [`loadImage()`](http://processing.org/reference/loadImage_.html)
+  function, and more examples
+  
+- about the [`image()`](http://processing.org/reference/image_.html)
+  function, and more examples
+  
+**Note**: your image files must be in a folder called "data" in your
+sketch folder.

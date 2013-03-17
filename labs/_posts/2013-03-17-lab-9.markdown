@@ -1,0 +1,47 @@
+---
+layout: post
+title: Lab 9
+due: Mar 25, 11:59pm
+---
+
+# Lab 9
+
+Watch the videos
+[object-oriented programming 1](/videos/2013-03-17-oo-1.html) and
+object-oriented programming 2 (coming soon).
+
+Create two classes, one called `Player` and one called something else
+like `Enemy`, `ScaryBall`, or whatever. The `Player` class must
+represent a single player, and the other class must represent things
+the players have to avoid or obtain or whatever.
+
+You must have two players (at least), and you must be able to control
+each player independently. Perhaps you will use the WASD keys for
+player 1, and UP/DOWN/LEFT/RIGHT for player 2. When you create a
+player, you should specify (maybe with an `int` or `boolean` value)
+whether you are creating player 1 or 2. When a key is pressed (in the
+`keyPressed()` function), each player should be asked to respond to
+the key. Player 1 ignores UP/DOWN/LEFT/RIGHT keys but responds to
+WASD, etc. See video 2 for an example of this coordination.
+
+You must have at least two enemies or scary balls or whatever that the
+players interact with. The enemies have to move on their own
+(randomly, or falling, or growing/shrinking, etc.).
+
+You do not need to detect collisions or have a score or difficulty. We
+just want to practice object-oriented programming, so we just want to
+practice making and using classes, and moving objects around.
+
+Your main `setup()` and `draw()` functions must be as simple as
+possible, like in the first video (the final code). These functions
+should only be responsible for creating player/enemy object variables,
+and calling functions in the classes.
+
+Finally, you are required to create a new "Tab" (i.e., new file) for
+each class (see the end of the first video). So, you should have three
+tabs: the main code, the player class, and the enemy class. When you
+upload your code to the Dropbox, make sure you use "Archive Sketch"
+feature in the Tools menu so that you upload all of your files and
+not just your main file.
+
+

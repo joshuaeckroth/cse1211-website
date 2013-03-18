@@ -8,7 +8,7 @@ due: Mar 25, 11:59pm
 
 Watch the videos
 [object-oriented programming 1](/videos/2013-03-17-oo-1.html) and
-object-oriented programming 2 (coming soon).
+[lecture about object-oriented programming](/videos/2013-03-18-oo-lecture.html).
 
 Create two classes, one called `Player` and one called something else
 like `Enemy`, `ScaryBall`, or whatever. The `Player` class must

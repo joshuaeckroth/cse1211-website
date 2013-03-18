@@ -9,6 +9,10 @@ title: "Video: Object-oriented programming 1"
 <iframe src="http://player.vimeo.com/video/61957336?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
 
+The sketch outline tool I demonstrate at the end can be found here:
+[Sketch Outline](https://github.com/Manindra29/Sketch-Outline). Look
+at the bottom of that page for installation instructions.
+
 ## First use of a class
 
 Here, we moved only the `x` and `y` properties into a `Ghost`

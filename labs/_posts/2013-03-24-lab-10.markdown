@@ -78,26 +78,36 @@ Here is what you have to do:
   `stroke()` in various places. Also, update the comments when you
   modify the code. You will lose points if your code is a complete
   mess with inaccurate comments.
+
+Hint: you might want to add `imageMode(CENTER);` to the top of the
+`setup()` function so when you draw your images with `image(0, 0, w,
+h)` they will draw with the center of the image on `0,0`. It makes
+everything easier.
   
-Extra credit (+20pts): Draw a bunch of tiny stars. (Why not?)
+Extra credit (+20pts): Draw a bunch of tiny stars. (Why not?) They
+should be randomly distributed, but they shouldn't move. You'll
+probably want to create a class called `Star` that has `x` and `y`
+variables which are set randomly in the constructor. This way, you can
+create an array of stars in `setup()`, then draw them in `draw()`;
+since each star keeps track of its own `x` and `y`, they won't move.
 
-Extra credit (+50pts): Draw each planet rotated around its own axis
+Extra credit (+30pts): Draw each planet rotated around its own axis
 for its day-night cycle (it doesn't matter how fast it rotates). This
-can be accomplished with the right combination of `rotate()` and
-`translate()` in the `display()` function of the class. Hint: you want
-to rotate for the planet's place in the solar system, then translate
-to it's position (plus a little bit extra), then rotate for its
-day-night cycle, then translate back that little bit extra, then draw
-the image...
+can be accomplished with the use of `rotate()` in the `display()`
+function of the class.
 
-Extra credit (+50pts): Draw the moon rotating around Earth. Use any
-one of the moon images provided. You'll want to create a new `Moon`
-class that is virtually identical to the `Planet` class. However, a
-moon has to know which planet it is orbiting. So, it probably needs
-another argument in its constructor, like a `Planet` object, which is
-saved as a variable in the class. When the moon is drawn, it can
-figure out where its planet is at that time, and make that the center
-of its orbit by translating to that location...
+Extra credit (+50pts): Draw the moon rotating around Earth, and maybe
+some of Jupiter's moons, too. Use any one of the moon images
+provided. This is easier than you might think. Just modify the
+`Planet` class (maybe it should now be called `Satellite`) so that the
+constructor has another parameter: an array of planets or satellites
+which orbit this planet. For planets with no moons, just put `null` as
+the argument. For planets with moons, create another array (just like
+the planets array) and give that array to the planet constructor with
+the moons. Then, finally, before the planet `display()` function is
+finished, use a `for()` loop that tells each of the planet's moons (if
+the array is not `null`) to `update()` and `display()`. It's really
+that simple. You can even have moons with their own moons! Etc.
 
 ## Main file
 

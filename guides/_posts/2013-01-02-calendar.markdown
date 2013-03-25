@@ -16,7 +16,7 @@ title: Calendar
 - Week 9 (03/04): test 2; loading graphics
 - Week 10 (03/10): spring break
 - Week 11 (03/18): object-oriented programming
-- Week 12 (03/25): complex shapes using PShape
+- Week 12 (03/25): 2D transformations
 - Week 13 (04/01): physics
 - Week 14 (04/08): project 2
 - Week 15 (04/15): project 2

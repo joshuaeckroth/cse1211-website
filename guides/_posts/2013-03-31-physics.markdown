@@ -17,6 +17,11 @@ After installing, you can find fisica examples by clicking the "File"
 menu, then "Examples", then scrolling to the bottom an expanding the
 item "Contributed Libraries" and then expanding "Fisica".
 
+Check out the
+[ficisa manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+and the
+[Processing Wiki](http://wiki.processing.org/w/Fisica_/_JBox2D_physics_engine).
+
 ## Terms
 
 - **Body**: "Represents a body in the world. A body is an object which

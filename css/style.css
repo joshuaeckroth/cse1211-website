@@ -151,3 +151,7 @@ td {
     padding: 5px;
 }
 
+pre {
+    border-left: 4px solid #eee;
+    padding-left: 15px;
+}

@@ -7,7 +7,7 @@ due: Apr 10, 11:59pm
 # Lab 11
 
 Read about [physics simulations](/guides/2013-03-31-physics.html) and
-watch the [lecture video about fisica](FOO) and the
+watch the [lecture video about fisica](/videos/2013-04-03-fisica-lecture.html) and the
 [video about Angry Birds](/videos/2013-04-03-fisica-angry-birds.html). Refer
 to the
 [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html)

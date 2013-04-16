@@ -1,0 +1,135 @@
+---
+layout: post
+title: Test 3 Guide
+---
+
+# Test 3 Guide
+
+You will see some questions like the following. The test is on paper,
+closed-notes.
+
+## 2D transformations
+
+Assume you have this code:
+
+{% highlight java %}
+void setup()
+{
+  size(500, 500);
+  noLoop();
+  rectMode(CENTER);
+}
+
+void draw()
+{
+  background(255);
+  fill(0);
+  
+  pushMatrix();
+  
+  // ...
+
+  rect(0, 0, 20, 100);
+  
+  // ...
+  
+  popMatrix();
+}
+{% endhighlight %}
+
+
+Replace `// ...` with the appropriate combinations of `pushMatrix()`,
+`popMatrix()`, `scale()`, `rotate()`, and `translate()` in order to
+produce the following displays. You are not allowed to use any shape
+functions except the exact `rect(0, 0, 20, 100)` provided. Assume the
+large white rectangle with the black border is the whole 300x300
+window. In some cases, `// ...` may not need to be replaced with code
+and may be left blank.
+
+![Display 1](/images/test-3-display-1.png)
+![Display 2](/images/test-3-display-2.png)
+
+For the next two cases, use this template in `draw()`:
+
+{% highlight java %}
+background(255);
+fill(0);
+
+pushMatrix();
+  
+// ...
+
+for (......)
+{
+  // ...
+  
+  rect(0, 0, 20, 100);
+  
+  // ...
+}
+
+// ...
+
+popMatrix();
+{% endhighlight %}
+
+![Display 3](/images/test-3-display-3.png)
+![Display 4](/images/test-3-display-4.png)
+
+## Object-oriented programming
+
+If you see this code, `Xyz abc;` you can safely assume (in this class)
+that we are using object-oriented programming. Which of `Xyz` and
+`abc` is the class? Which is the object? What's a good synonym for
+"class" (in our usage)? What's a good synonym for "object"?
+
+Here is a class:
+
+{% highlight java %}
+class Foo
+{
+  Foo()
+  {
+    println("A");
+  }
+  
+  void f1()
+  {
+    println("B");
+  }
+  
+  void f2()
+  {
+    println("C");
+  }
+}
+{% endhighlight %}
+
+Which message, if any, is printed when we do this: `Foo myfoo;` And
+what about this: `myfoo = new Foo();` And finally, what about this:
+`myfoo.f2();`
+
+Which function is the constructor? Which message does the constructor
+print?
+
+Write the code necessary to declare and initialize an array of 200
+`Foo` objects (instances).
+
+Suppose we have this code:
+
+{% highlight java %}
+Baz b = new Baz("Claudia");
+b.printMany(5); // prints "Claudia" five times, on separate lines
+b.printMany(12); // prints "Claudia" twelve times, on separate lines
+Baz c = new Baz("James");
+c.printMany(3); // prints "James" three times, on separate lines
+{% endhighlight %}
+
+Write a class that enables the code above to work as described. You
+must define this class with exactly seven lines of code, the minimum
+possible (as far as I know). We count lines of code by ignoring blank
+lines and lines with only `{` or `}`, and using the normal coding
+style we have seen in this class.
+
+When we are using objects, what is the most common cause of a
+"NullPointerException"?

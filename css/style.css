@@ -155,3 +155,7 @@ pre {
     border-left: 4px solid #eee;
     padding-left: 15px;
 }
+
+blockquote {
+    padding-left: 30px;
+}

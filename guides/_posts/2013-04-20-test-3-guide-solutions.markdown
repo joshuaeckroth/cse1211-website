@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Test 3 Guide Solutions"
+title: Test 3 Guide Solutions
 ---
 
 # Test 3 Guide Solutions
@@ -157,28 +157,5 @@ to do this:
 
 {% highlight java %}
 myfoo.doSomething();
-{% endhighlight %}
-
-
-
-
-{% highlight %}
-class Baz
-{
-  String name;
-
-  Baz(String name_)
-  {
-    name = name_;
-  }
-  
-  void printMany(int count)
-  {
-    for(int i = 0; i < count; i++)
-    {
-      println(name);
-    }
-  }
-}
 {% endhighlight %}
 

@@ -96,7 +96,7 @@ being printed.
 > Which function is the constructor? Which message does the constructor
 > print?
 
-The constructor is always the function with the same name of the
+The constructor is always the function with the same name as the
 class. The constructor prints `"A"` when it is called.
 
 > Write the code necessary to declare and initialize an array of 200
@@ -110,11 +110,11 @@ for(int i = 0; i < 200; i++)
 }
 {% endhighlight %}
 
-> Write a class that enables the code above to work as described. You
-> must define this class with exactly seven lines of code, the minimum
-> possible (as far as I know). We count lines of code by ignoring
-> blank lines and lines with only `{` or `}`, and using the normal
-> coding style we have seen in this class.
+> Write a class that enables the code above (not shown here) to work
+> as described. You must define this class with exactly seven lines of
+> code, the minimum possible (as far as I know). We count lines of
+> code by ignoring blank lines and lines with only `{` or `}`, and
+> using the normal coding style we have seen in this class.
 
 {% highlight java %}
 class Baz

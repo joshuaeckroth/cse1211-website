@@ -42,7 +42,7 @@ Replace `// ...` with the appropriate combinations of `pushMatrix()`,
 `popMatrix()`, `scale()`, `rotate()`, and `translate()` in order to
 produce the following displays. You are not allowed to use any shape
 functions except the exact `rect(0, 0, 20, 100)` provided. Assume the
-large white rectangle with the black border is the whole 300x300
+large white rectangle with the black border is the whole 500x500
 window. In some cases, `// ...` may not need to be replaced with code
 and may be left blank.
 

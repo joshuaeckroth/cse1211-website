@@ -21,8 +21,8 @@ Second:
 
 {% highlight java %}
 pushMatrix();
-translate(270, 150);
-scale(2.0);
+translate(470, 250);
+scale(4.0);
 rect(0, 0, 20, 100);
 popMatrix();
 {% endhighlight %}
@@ -31,7 +31,7 @@ Third:
 
 {% highlight java %}
 pushMatrix();
-translate(150, 150);
+translate(250, 250);
 for (int i = 0; i < 5; i++)
 {
   pushMatrix();
@@ -47,7 +47,7 @@ Fourth:
 
 {% highlight java %}
 pushMatrix();
-translate(150, 150);
+translate(250, 250);
 for (int i = 0; i < 100; i++)
 {
   pushMatrix();

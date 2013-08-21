@@ -9,10 +9,10 @@ due: Aug 29, 11:59pm
 We'll be programming with the tool known as Processing.
 
 Your task in this lab is to figure out how to install Processing and
-create a "sketch" (their word for a "program") that draws a stick
-figure. You are required to use at least one circle, one rectangle,
-and some lines. You are also required to use at least three different
-colors for stroke, fill, and background.
+create a "sketch" (their word for a "program") that draws an animal or
+car or house (etc.). You are required to use at least one circle, one
+rectangle, and some lines. You are also required to use at least three
+different colors for stroke, fill, and background.
 
 Create an "archive" of your sketch (this creates a ZIP file) and put
 it in the Carmen dropbox. You can create an archive by using the Tools

@@ -32,4 +32,4 @@ If you want more info, also try
   
 - How to set a specific kind of stroke.
 
-- The differences among `colorMode(RGB)` and `colorMode(HSB)`
+- The differences among `colorMode(RGB)` and `colorMode(HSB)`.

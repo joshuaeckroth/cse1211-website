@@ -19,6 +19,17 @@ If you want more info, also try
 - [`fill()`](http://processing.org/reference/fill_.html) and
   [`noFill()`](http://processing.org/reference/noFill_.html)
 - [`stroke()`](http://processing.org/reference/stroke_.html) and [`noStroke()`](http://processing.org/reference/noStroke_.html)
+- [`strokeCap()`](http://processing.org/reference/strokeCap_.html)
+- [`strokeJoin()`](http://processing.org/reference/strokeJoin_.html)
+- [`strokeWeight()`](http://processing.org/reference/strokeWeight_.html)
 - [`color()`](http://processing.org/reference/color_.html)
+- [`colorMode()`](http://processing.org/reference/colorMode_.html)
+ 
+## What you'll need to know for test 1
+ 
+- How to set the stroke/fill/background to a specific color (e.g.,
+  "purple" or "25% translucent light blue").
+  
+- How to set a specific kind of stroke.
 
-
+- The differences among `colorMode(RGB)` and `colorMode(HSB)`

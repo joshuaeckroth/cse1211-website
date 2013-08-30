@@ -27,3 +27,8 @@ You are required to have:
 - changing variable values in the `draw()` function
 - at least two kinds of shapes or lines/curves
 - colors
+
+Do not simply copy what I have done in the videos. You will lose
+points if you do this. Instead, create a unique program that animates
+objects in a different way. Your program doesn't have to be "clever"
+or "creative" but it does have to be different.

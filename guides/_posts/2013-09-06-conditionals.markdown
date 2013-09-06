@@ -82,7 +82,7 @@ else
 More interesting conditionals may involve the following boolean
 operators (assuming `p` and `q` are bool variables and `x` is an `int`
 variable). Refer to the [variables and types
-video](/videos/2013-09-06-variables-types-1.markdown).
+video](/videos/2013-09-06-variables-types-1.html).
 
 - `!p` --- "not p" or "opposite of the value that p has"
 

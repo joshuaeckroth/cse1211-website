@@ -1,0 +1,28 @@
+---
+layout: post
+title: Lab 3
+due: Sep 12, 11:59pm
+---
+
+# Lab 3
+
+Watch the videos about [keyboard
+input](/videos/2013-09-06-video-keyboard-input-1.html) and [mouse
+input](/videos/2013-09-06-mouse-input-1.html).
+
+Create a keyboard- and mouse-controlled program. At least one object
+has to move based on keyboard input and/or mouse input. Or, at least
+one object may appear or disappear, or change colors, based on
+keyboard input and/or mouse input. Make at least four different kinds
+of responses, depending on which keys are pressed and how the mouse is
+moved. You must check basic keys like `key == 'w'` and key codes like
+`keyCode == UP`. Regardless of how you do it, you are required to have
+keyboard- and mouse-controlled features, even if it's just the same
+object controlled by both the keyboard and mouse.
+
+There is a big list of key codes at the [Java reference
+page](http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyEvent.html). Each
+item in that list starts `VK_`; just remove the `VK_` and you have the
+keycode. You may also find the Processing references useful; refer to
+the subsections "Mouse" and "Keyboard" under the "Input" section.
+

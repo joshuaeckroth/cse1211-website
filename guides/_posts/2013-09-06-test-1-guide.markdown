@@ -1,0 +1,132 @@
+---
+layout: post
+title: Test 1 Guide
+---
+
+# Test 1 Guide
+
+You will see some questions like the following. The test is on paper,
+closed-notes. The material covered is the coordinate system, colors,
+animation, and variables and type.
+
+## Coordinate system and shapes
+
+- what is the code to draw a 4x4 square in the middle of a 50x50 window?
+- what is the code to draw a 4x4 square in the middle of a window of any size?
+- what is the code to draw an ellipse that touches the four edges of a window of any size?
+- what is the code to draw a rectangle that covers the entire window (and no more)?
+- draw the shape of an arc from 0 to PI/2 (I don't want code, I want the actual shape)
+
+## Color
+
+- what is the code to set the fill color to white or black or very-light-gray?
+- what is the code to set the fill color to 50% transparent dark red?
+- what is the code to set the background color to bright yellow or
+  purple or cyan? (the three simplest combinations of two colors)
+
+Some of these questions have a range of valid answers since, e.g.,
+"dark red" is open to some interpretation.
+
+## Variables and types
+
+- what type should be used to hold the value 55 (not 55.0)?
+- what type should be used to hold the value 55.5?
+- what type should be used to hold the value "foo bar"
+- what type should be used to hold the value of a single symbol that can be typed on the keyboard?
+- what type should be used to hold the value true or false?
+
+What is the result of each of the following computations?
+
+{% highlight java %}
+55 % 10
+55 / 10
+2.4 / 2.0
+pow(2.0, 2.0)
+{% endhighlight %}
+
+If we have `int x = 5`, what is the value of `x` after each of these commands:
+
+{% highlight java %}
+x--;
+x--;
+x *= 2;
+x++;
+{% endhighlight %}
+
+If we have `boolean q = true`, what is the value of `q` after each of these commands:
+
+{% highlight java %}
+q = false;
+q = true || q;
+q = !q;
+{% endhighlight %}
+
+## Animation
+
+Write the chunk of code (two functions) we will always include when we
+start writing a program.
+
+Identify which of the two following chunks of code properly moves a
+triangle from the left of the screen to the right.
+
+<table>
+<tr>
+<td>
+{% highlight java %}
+int x = 0;
+int y = 200;
+
+void setup()
+{
+    size(400, 400);
+}
+
+void draw()
+{
+    x--;
+    background(0);
+    triangle(x-50, y+50, x, y, x+50, y+50);
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight java %}
+int x = 0;
+int y = 200;
+
+void setup()
+{
+    size(400, 400);
+}
+
+void draw()
+{
+    background(0);
+    triangle(x-50, y+50, x, y, x+50, y+50);
+    x = x + 5;
+}
+{% endhighlight %}
+</td>
+</tr>
+</table>
+
+Complete this code so that the ellipse starts large but shrinks over
+time (its size is allowed to become negative).
+
+{% highlight java %}
+int ________________;
+
+void ________________
+{
+    size(400, 400);
+}
+
+void ________________
+{
+    background(255);
+    ellipse(50, 100, ________________);
+    
+    __________________________;
+}
+{% endhighlight %}
+

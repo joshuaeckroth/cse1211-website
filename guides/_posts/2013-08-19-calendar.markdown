@@ -10,7 +10,7 @@ Monday and Wednesday (labs).
 
 - Week 1 (08/23): installing Processing, drawing shapes and using color
 - Week 2 (08/30): basic animation
-- Week 3 (09/06): keyboard input, mouse input
+- Week 3 (09/06): keyboard input, mouse input, conditional ("if") statements
 - Week 4 (09/13): test 1
 - Week 5 (09/20): project 1, how to build a game
 - Week 6 (09/27): arrays & loops

@@ -7,7 +7,8 @@ title: Test 1 Guide
 
 You will see some questions like the following. The test is on paper,
 closed-notes. The material covered is the coordinate system, colors,
-animation, and variables and type.
+animation, and variables and types. Refer to the corresponding videos
+for those topics.
 
 ## Coordinate system and shapes
 

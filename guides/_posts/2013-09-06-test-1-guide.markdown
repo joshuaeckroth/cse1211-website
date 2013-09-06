@@ -16,7 +16,6 @@ for those topics.
 - what is the code to draw a 4x4 square in the middle of a window of any size?
 - what is the code to draw an ellipse that touches the four edges of a window of any size?
 - what is the code to draw a rectangle that covers the entire window (and no more)?
-- draw the shape of an arc from 0 to PI/2 (I don't want code, I want the actual shape)
 
 ## Color
 

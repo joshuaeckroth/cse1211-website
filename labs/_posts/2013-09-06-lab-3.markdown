@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lab 3
-due: Sep 12, 11:59pm
+due: Sep 17, 11:59pm
 ---
 
 # Lab 3

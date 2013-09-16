@@ -19,7 +19,7 @@ Notes for this video are found below.
 
 - `char` for single characters/symbols (e.g., `'x'`).
 
-- `string` for "strings" (e.g., `"Hello, Bob!"`).
+- `String` (capitalized) for "strings" (e.g., `"Hello, Bob!"`).
 
 - `boolean` for true/false values
 

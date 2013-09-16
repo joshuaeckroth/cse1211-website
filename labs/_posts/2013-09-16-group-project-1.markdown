@@ -1,56 +1,47 @@
 ---
 layout: post
 title: Group project 1
-due: Feb 19, 11:59pm
+due: Sep 26, 11:59pm
 ---
 
 # Group project 1
 
 Watch the videos about
-[game design 1](/videos/2013-02-05-game-design-1.html) and
-[game design 2](/videos/2013-02-05-game-design-2.html).
+[game design 1](/videos/2013-09-16-game-design-1.html) and
+[game design 2](/videos/2013-09-16-game-design-2.html).
 
-You are required to work in a group of two people. If you already have
-a partner in mind, that's fine, work with that person. On Monday
-(02/11) we'll find partners for people who do not yet have one. You
-will both receive the same grade. You are required to make a simple
+You are required to work in a group of two people (unless I've made an exception for you). You will both receive the same grade. At the top of your code, in comments (`// my comment...`), describe to me how each person contributed (use each person's full name). If there is a big disparity in contributions, your grades will not be equal.
+
+You are required to make a simple
 game, with the following elements:
 
 - a goal
 - keyboard and/or mouse control
 - score (shown on the screen)
-- difficulty levels
+- difficulty levels (at least 3)
 - a way to lose
 - at least somewhat visually appealing
 
 You cannot copy the games developed in the videos or the Tron example
-below. But, you can use them as inspiration.
+below.
 
-Finally, when you turn in the code, either in a dropbox comment or
-comment in the code, specify which person was responsible for which
-features. Both people should contribute equally. If there is a big
-disparity in contributions, your grades will not be equal.
-
-Only one person needs to submit the code in the dropbox.
+Only one person needs to submit the code in the Dropbox.
 
 ## Example game ideas
 
 These ideas have been implemented and can only be used for inspiration:
 
-- tron (see below)
-- candy catch (from the [game design 1](/videos/2013-02-05-game-design-1.html) video)
-- touch blinky (from the [game design 2](/videos/2013-02-05-game-design-2.html) video)
+- Tron (see below)
+- Candy catch (from the [game design 1](/videos/2013-09-16-game-design-1.html) video)
+- Touch blinky (from the [game design 2](/videos/2013-09-16-game-design-2.html) video)
 
 You can use any of these ideas:
 
 - dodge ball
-  - throws circles and you have to dodge them
-  - stay on same y position, left-right keys
-  - balls fall
-- snake
-  - eat things, and get longer only then
+  - player A throws circles and player B has to dodge them
+  - both players stay on same x position, use up-down or w-s keys
 - pong
-- missle command
+- missile command
   - lines aiming randomly from top to bottom
   - shoot at some angle
   - detect if it "hits" a line
@@ -64,7 +55,7 @@ You can use any of these ideas:
 ## Tron example
 
 Note, score is missing in this example. Also, it seems obvious to
-include a second player, who uses WASD keys to control their
+include a second player, who uses WASD keys to control his/her
 movements.
 
 {% highlight java %}

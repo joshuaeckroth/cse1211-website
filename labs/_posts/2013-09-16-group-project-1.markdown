@@ -129,3 +129,108 @@ void keyPressed()
   }
 }
 {% endhighlight %}
+
+## Falling letters example
+
+{% highlight java %}
+char letter;
+int x, y;
+int c;
+int score;
+boolean lost;
+int lives;
+boolean paused;
+
+void setup()
+{
+  size(800, 600);
+
+  letter = char(int(random('A', 'Z'+1)));
+  x = int(random(20, width-20));
+  y = int(random(50, 100));
+  score = 0;
+  c = 1;
+  lost = false;
+  lives = 3;
+  paused = true;
+}
+
+void draw()
+{
+  background(255);
+
+  textSize(30);
+  fill(0, 0, 255);
+  text("Score: " + score, 50, 50);
+  text("Lives: " + lives, 50, 150);
+
+  if(paused)
+  {
+    
+    noLoop();
+    fill(255, 0, 0);
+    textSize(60);
+    text("Paused", 300, 300);
+  }
+
+  if (lost)
+  {
+    noLoop();
+    fill(255, 0, 0);
+    textSize(60);
+    text("You lost.", 300, 300);
+  }
+  else
+  {
+
+    fill(0);
+    textSize(40);
+    text(letter, x, y);
+
+    y += c;
+    
+    if(y > height)
+    {
+      lost = true;
+    }
+  }
+}
+
+void keyPressed()
+{
+  if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z'))
+  {
+    if (key == letter || key == (letter + 32))
+    {
+      score++;
+      letter = char(int(random('A', 'Z'+1)));
+      x = int(random(20, width-20));
+      y = int(random(50, 100));
+
+      if (score % 5 == 0)
+      {
+        c += 2;
+      }
+    }
+    else
+    {
+      if(lives == 0)
+      {
+        lost = true;
+      }
+      else
+      {
+        lives--;
+      }
+    }
+  }
+  if(key == ' ')
+  {
+    paused = !paused;
+    if(!paused) { 
+      loop();
+    }
+  }
+  
+}
+{% endhighlight %}

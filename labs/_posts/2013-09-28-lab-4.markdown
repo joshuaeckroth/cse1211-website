@@ -1,0 +1,34 @@
+---
+layout: post
+title: Lab 4
+due: Oct 5, 11:59pm
+---
+
+# Lab 4
+
+Watch the videos about arrays:
+[arrays 1](/videos/2013-09-26-arrays-1.html),
+[arrays 2](/videos/2013-09-26-arrays-2.html),
+[array utilities](/videos/2013-09-27-array-utilities.html), and
+[`for` loops](/videos/2013-09-27-for-loops.html).
+
+Create a program that uses arrays and `for` loops.
+
+You are required to have:
+
+- at least one array
+- at least two `for` loops: one in `setup()` and one in `draw()`; you
+  can have more, of course
+- at least some of the values in the arrays must change over
+  time
+  
+**You must implement one of the following ideas or, if you have your own idea, talk to me so I can "approve" it.**
+
+- show random or cycling text messages (e.g., quotes, an array of type `String`) on the screen in various colors or positions and that get bigger and smaller (e.g., "pop in" and "pop out")
+
+- show "explosions" in which many dots scatter away from the location of a mouse click
+  
+- many circles at initially-random locations follow the mouse pointer; the circles farther away follow more slowly, but speed up as they get closer
+  
+- allow the user to drag shapes around the screen, as if assembling a
+  jigsaw puzzle

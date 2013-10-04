@@ -144,3 +144,77 @@ void draw()
   b2x++;
 }
 {% endhighlight %}
+
+## Example 3: Better butterflies
+
+<div style="text-align: center; margin: 10px;">
+<img src="/images/butterfly-many.png" />
+</div>
+
+{% highlight java %}
+// butterflies from:
+// http://opengameart.org/content/animated-butterfly
+
+// background from:
+// http://02varvara.files.wordpress.com/2009/11/field-of-flowers.jpg
+
+PImage bg;
+
+PImage[][] butts = new PImage[5][24];
+int bcount = 100;
+int[] btypes = new int[bcount];
+float[] bxs = new float[bcount];
+float[] bys = new float[bcount];
+int[] bframes = new int[bcount];
+int[] bframespeeds = new int[bcount];
+float[] bxspeeds = new float[bcount];
+float[] bscales = new float[bcount];
+
+void setup()
+{
+  size(800, 600);
+  bg = loadImage("field-of-flowers.jpg");
+  imageMode(CENTER);
+  
+  PImage gridimage = loadImage("butterfly.png");
+  for(int i = 0; i < 5*24; i++)
+  {
+    int row = i / 17;
+    int col = i % 17;
+    int b = i / 24;
+    butts[b][i % 24] = gridimage.get(col*30, row*25, 30, 25);
+  }
+
+  for(int i = 0; i < bcount; i++)
+  {
+    btypes[i] = int(random(5));
+    bxs[i] = random(-100, width);
+    bys[i] = random(height);
+    bframes[i] = int(random(24));
+    bframespeeds[i] = int(random(50, 200));
+    bxspeeds[i] = 200.0/bframespeeds[i];
+    bscales[i] = random(0.5, 2.0);
+  }
+}
+
+void draw()
+{
+  noTint();
+  image(bg, width/2, height/2, 
+    width, (float(width)/bg.width)*bg.height);
+  
+
+  for(int i = 0; i < bcount; i++)
+  {
+    int frame = (millis()/bframespeeds[i] + bframes[i]) % 24;
+    int b = btypes[i];
+    image(butts[b][frame], bxs[i], bys[i],
+      int(bscales[i]*30), int(bscales[i]*25));
+    bxs[i] += bxspeeds[i];
+    if(bxs[i] > (width+50))
+    {
+      bxs[i] = -100;
+    }
+  }
+}
+{% endhighlight %}

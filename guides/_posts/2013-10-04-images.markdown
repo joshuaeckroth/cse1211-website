@@ -1,0 +1,146 @@
+---
+layout: post
+title: Images
+---
+
+# Images
+
+Processing can do more than draw shapes. We can also load images and
+draw them at `x`,`y` locations. Actually, you can do a lot more with
+images, but we'll start with that.
+
+Read,
+
+- about the [`PImage`](http://processing.org/reference/PImage.html) type
+  
+- about the
+  [`loadImage()`](http://processing.org/reference/loadImage_.html)
+  function
+  
+- about the [`image()`](http://processing.org/reference/image_.html)
+  function and [`imageMode()`](http://processing.org/reference/imageMode_.html) (which is like `rectMode()`)
+
+- possibly useful: [`tint()`](http://processing.org/reference/tint_.html) and [`noTint()`](http://processing.org/reference/noTint_.html); [`smooth()`](http://processing.org/reference/smooth_.html) and [`noSmooth()`](http://processing.org/reference/noSmooth_.html)
+  
+**Note**: your image files must be in a folder called "data" in your
+sketch folder.
+
+## Example 1: Using images
+
+<div style="text-align: center; margin: 10px;">
+<img src="/images/images-example.png" />
+</div>
+
+{% highlight java %}
+// background image from:
+// http://poster.4teachers.org/imgFileWizard/73251.jpg
+
+// spacheships from:
+// http://opengameart.org/content/spaceship-set-32x32px
+
+PImage bg;
+PImage boss;
+PImage player;
+int bossx, bossy;
+int px, py;
+
+void setup()
+{
+  size(800, 600);
+  bg = loadImage("moon.jpg");
+  boss = loadImage("boss1.png");
+  player = loadImage("player_ship.png");
+  imageMode(CENTER);
+  
+  bossx = 400; bossy = 100;
+  px = 400; py = 500;
+}
+
+void draw()
+{
+  smooth();
+  noTint();
+  image(bg, width/2, height/2, 
+    width, (float(width)/bg.width)*bg.height);
+  
+  noSmooth();
+  tint(255, 100, 100);
+  image(boss, bossx, bossy, 4*boss.width, 4*boss.height);
+  tint(113, 100, 255);
+  image(player, px, py, 3*player.width, 3*player.height);
+}
+
+void keyPressed()
+{
+  if(key == CODED)
+  {
+    if(keyCode == UP)
+    {
+      py -= 5;
+    }
+    if(keyCode == DOWN)
+    {
+      py += 5;
+    }
+    if(keyCode == LEFT)
+    {
+      px -= 5;
+    }
+    if(keyCode == RIGHT)
+    {
+      px += 5;
+    }
+  }
+}
+{% endhighlight %}
+
+## Example 2: Animated sprites
+
+<div style="text-align: center; margin: 10px;">
+<img src="/images/butterfly.png" />
+</div>
+
+{% highlight java %}
+// butterflies from:
+// http://opengameart.org/content/animated-butterfly
+
+PImage[] butt1 = new PImage[24];
+PImage[] butt2 = new PImage[24];
+
+int b1x, b1y;
+int b2x, b2y;
+
+void setup()
+{
+  size(800, 600);
+  noSmooth();
+  
+  b1x = 350; b1y = 300;
+  b2x = 450; b2y = 300;
+  
+  PImage gridimage = loadImage("butterfly.png");
+  for(int i = 0; i < 48; i++)
+  {
+    int row = i / 17;
+    int col = i % 17;
+    
+    if(i < 24) {
+      butt1[i] = gridimage.get(col*30, row*25, 30, 25);
+    } else {
+      butt2[i-24] = gridimage.get(col*30, row*25, 30, 25);
+    }
+  }
+
+}
+
+void draw()
+{
+  background(255);
+  
+  image(butt1[millis()/100 % butt1.length], b1x, b1y, 60, 50);
+  image(butt2[millis()/100 % butt2.length], b2x, b2y, 90, 75);
+  
+  b1x++;
+  b2x++;
+}
+{% endhighlight %}

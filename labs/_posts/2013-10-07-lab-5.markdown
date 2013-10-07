@@ -1,0 +1,21 @@
+---
+layout: post
+title: Lab 5
+due: Oct 15, 11:59pm
+---
+
+# Lab 5
+
+Read the guide about [images](/guides/2013-10-04-images.html).
+
+Go to [OpenGameArt.org](http://opengameart.org) and find some images to use with this lab (do not use any images that I used in the notes). Two of your images must be grids of sprites.
+
+Create a program that meets the following criteria:
+
+- Must have a background image, and it must be scaled correctly (i.e., not appear "squished") and fill the whole window.
+
+- Must have at least one animated sprite, extracted from a grid and stored in an array. Examples that I used are butterflies and the explosion (see the notes about [images](/guides/2013-10-04-images.html)). This sprite must be hidden normally, but when some event happens (like clicking the mouse, pressing a key, bumping into the window edge, etc.). The animation should loop at least twice, but not loop forever; then it must disappear again until the next event.
+
+- Must have another sprite that is not animated but has different images for different contexts. For example, you can have a player sprite that has a different image when it faces north, south, east, and west (example: [http://opengameart.org/content/cowboy-with-rifle](http://opengameart.org/content/cowboy-with-rifle)). The user must be able to move this sprite with the keyboard. As before, you must extract the images from a grid and keep them in an array.
+
+I don't care what your program "does" as long as it meets these requirements.

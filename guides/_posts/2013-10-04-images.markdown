@@ -218,3 +218,53 @@ void draw()
   }
 }
 {% endhighlight %}
+
+## Example 4: Explosion
+
+Some code was deleted so that this program cannot be used verbatim to solve Lab 5.
+
+{% highlight java %}
+PImage[] explosion = new PImage[24]; // 24 frames for the explosion
+int ex, ey, eframe;
+boolean player_exp;
+
+void setup()
+{
+  PImage exp_gridimage = loadImage("explosion_2.png");
+  for (int i = 0; i < 24; i++)
+  {
+    // ... (extract frames of grid image)
+  }
+
+  ex = 500; 
+  ey = 300;
+  player_exp = false;
+}
+
+void draw()
+{
+  // do we show the explosion?
+  if (player_exp)
+  {
+    // ... (show a certain frame of the explosion)
+    // ... (move on to next frame)
+  }
+
+  // explosion is shown once (does not loop);
+  // if we reach the last frame, turn it off
+  if (eframe >= explosion.length)
+  {
+    player_exp = false;
+  }
+}
+
+void keyPressed()
+{
+  if (key == ' ')
+  {
+    player_exp = true; // turn on explosion
+    eframe = 0; // start explosion at first frame
+    // ...
+  }
+}
+{% endhighlight %}

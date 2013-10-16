@@ -17,9 +17,9 @@ Monday and Wednesday (labs).
 - Week 7 (10/04): arrays & loops; loading graphics
 - Week 8 (10/11): test 2
 - Week 9 (10/18): object-oriented programming
-- Week 10 (10/25): 2D transformations
-- Week 11 (11/01): physics
-- Week 12 (11/08): sound effects, music
+- Week 10 (10/25): object-oriented programming
+- Week 11 (11/01): 2D transformations
+- Week 12 (11/08): physics
 - Week 13 (11/15): project 2, how to build a bigger game
 - Week 14 (11/22): test 3
 

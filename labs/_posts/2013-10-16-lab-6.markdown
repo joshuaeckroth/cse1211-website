@@ -1,0 +1,22 @@
+---
+layout: post
+title: Lab 6
+due: Oct 22, 11:59pm
+---
+
+# Lab 6
+
+Watch the video
+[object-oriented programming 1](/videos/2013-10-16-oo-1.html).
+
+Create two classes, one called `MouseFrog` and one called `KeyboardFrog`. The first will be a frog that moves around the screen and is controlled by the mouse. The second is, naturally, controlled by the keyboard. You can choose which frog image is most appropriate. Or, you can not choose a frog, but then you'll probably wanto to name the classes differently. Anyway, both frogs (or whatever) should be on the screen and move about according to mouse or keyboard control.
+
+Your main `setup()` and `draw()` functions must be as simple as
+possible, like in the video. Do not put `PImage` variables or `x/y` variables in the main file; put this stuff only in the classes. The loading of images and moving of the frogs must be handled by the classes, not the main functions. Talk to me if you are confused about this point.
+
+Finally, you are required to create a new "Tab" (i.e., new file) for
+each class. So, you should have three
+tabs: the main code, the `MouseFrog` class, and the `KeyboardFrog` class. When you
+upload your code to the Dropbox, make sure you use "Archive Sketch"
+feature in the Tools menu so that you upload all of your files and
+not just your main file.

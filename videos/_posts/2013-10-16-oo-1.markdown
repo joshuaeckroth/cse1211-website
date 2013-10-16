@@ -1,0 +1,267 @@
+---
+layout: post
+title: "Video: Object-oriented programming 1"
+---
+
+# Video: Object-oriented programming 1
+
+<div style="text-align: center">
+<iframe src="http://player.vimeo.com/video/61957336?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
+
+The sketch outline tool I demonstrate at the end can be found here:
+[Sketch Outline](https://github.com/Manindra29/Sketch-Outline). Look
+at the bottom of that page for installation instructions.
+
+## First use of a class
+
+Here, we moved only the `x` and `y` properties into a `Ghost`
+class. Now each `Ghost` object, such as `g1`, keeps track of it's own
+position. The properties can be accessed from the `g1` object/variable
+with the `.` (dot) syntax, like so: `g1.x = ...`
+
+{% highlight java %}
+class Ghost
+{
+  int x;
+  int y;
+}
+
+Ghost g1;
+PImage g1image;
+
+void setup()
+{
+  size(800, 600);
+  g1 = new Ghost();
+  g1.x = 100;
+  g1.y = 200;
+  g1image = loadImage("ghost_1.png");
+}
+
+void draw()
+{
+  background(255);
+  image(g1image, g1.x, g1.y);
+}
+{% endhighlight %}
+
+## Image data put into the class as well
+
+Now we also move the `PImage` data into the class.
+
+{% highlight java %}
+class Ghost
+{
+  int x;
+  int y;
+  PImage img;
+}
+
+// notice our class defines a new "type" of variable, like String or int
+Ghost g1;
+
+void setup()
+{
+  size(800, 600);
+  g1 = new Ghost();
+  g1.x = 100;
+  g1.y = 200;
+  g1.img = loadImage("ghost_1.png");
+}
+
+void draw()
+{
+  background(255);
+  image(g1.img, g1.x, g1.y);
+}
+{% endhighlight %}
+
+## Use of a constructor to set initial values
+
+Now, we create a special function with the same name of the class,
+`Ghost`, and no return type (not even `void`). This constructor has
+three inputs, all integers. We use these inputs to set the `x`, `y`,
+and `img` properties of the ghost.
+
+{% highlight java %}
+class Ghost
+{
+  int x;
+  int y;
+  PImage img;
+
+  // the constructor
+  Ghost(int _x, int _y, int i)
+  {
+    x = _x;
+    y = _y;
+    img = loadImage("ghost_" + i + ".png");
+  }
+}
+
+Ghost g1;
+
+void setup()
+{
+  size(800, 600);
+  g1 = new Ghost(100, 200, 1);
+}
+
+void draw()
+{
+  background(255);
+  image(g1.img, g1.x, g1.y);
+}
+{% endhighlight %}
+
+## Ghost can draw itself
+
+Next, we move the drawing code for the ghost into the class, by making
+a new function in the class. This further simplifies our other code
+(the normal `setup()` and `draw()` functions).
+
+{% highlight java %}
+class Ghost
+{
+  int x;
+  int y;
+  PImage img;
+  
+  Ghost(int xx, int yy, int i)
+  {
+    x = xx;
+    y = yy;
+    img = loadImage("ghost_" + i + ".png");
+  }
+
+  // new function
+  void drawGhost()
+  {
+    image(img, x, y, img.width/2, img.height/2);
+  }
+}
+
+Ghost g1;
+
+void setup()
+{
+  size(800, 600);
+  g1 = new Ghost(100, 200, 1);
+}
+
+void draw()
+{
+  background(255);
+  g1.drawGhost();
+}
+{% endhighlight %}
+
+
+## Ghost floats around
+
+We create another class function that slightly adjusts the ghost's `x`
+and `y` values.
+
+{% highlight java %}
+class Ghost
+{
+  int x;
+  int y;
+  PImage img;
+  
+  Ghost(int xx, int yy, int i)
+  {
+    x = xx;
+    y = yy;
+    img = loadImage("ghost_" + i + ".png");
+  }
+  
+  void drawGhost()
+  {
+    image(img, x, y, img.width/2, img.height/2);
+  }
+
+  // new function
+  void floatAround()
+  {
+    x += int(random(-2, 2));
+    y += int(random(-2, 2));
+  }
+}
+
+Ghost g1;
+
+void setup()
+{
+  size(800, 600);
+  g1 = new Ghost(100, 200, 1);
+}
+
+void draw()
+{
+  background(255);
+  g1.drawGhost();
+  g1.floatAround();
+}
+{% endhighlight %}
+
+## An array of ghosts
+
+Now that we have moved all the functionality and properties (data) of
+ghosts into the class, we can very succinctly make many ghosts and
+make them all move!
+
+{% highlight java %}
+class Ghost
+{
+  int x;
+  int y;
+  PImage img;
+  
+  Ghost(int xx, int yy, int i)
+  {
+    x = xx;
+    y = yy;
+    img = loadImage("ghost_" + (i+1) + ".png");
+  }
+  
+  void drawGhost()
+  {
+    image(img, x, y, img.width/2, img.height/2);
+  }
+  
+  void floatAround()
+  {
+    x += int(random(-2, 2));
+    y += int(random(-2, 2));
+  }
+}
+
+Ghost[] ghosts;
+
+void setup()
+{
+  size(800, 600);
+  
+  ghosts = new Ghost[4];
+  
+  for(int i = 0; i < ghosts.length; i++)
+  {
+    // each ghost starts at a random place
+    ghosts[i] = new Ghost(int(random(0, 800)), int(random(0, 600)), i);
+  }
+}
+
+void draw()
+{
+  background(50);
+  
+  // draw each ghost and make it move
+  for(int i = 0; i < ghosts.length; i++)
+  {
+    ghosts[i].drawGhost();
+    ghosts[i].floatAround();
+  }
+}
+{% endhighlight %}

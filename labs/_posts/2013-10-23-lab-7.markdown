@@ -1,0 +1,15 @@
+---
+layout: post
+title: Lab 7
+due: Nov 1, 11:59pm
+---
+
+# Lab 7
+
+Create two classes: `Player`, `Bug`. Both of these classes draw animated sprites (maybe only if the player or bugs are in motion, or maybe all the time). Create one instance of the `Player` class, and allow this instance to be moved around the screen with the keyboard and/or mouse. You must have an array of `Bug` objects, so that there are many of them on the screen at the same time. The bugs move around on their own (perhaps randomly).
+
+Create functions in the `Player` class called `getX()` and `getY()` and create functions in the `Bug` class called `getTopLeftX()`, `getTopLeftY()`, `getWidth()`, and `getHeight()`, that return the corresponding values. Then, in the `draw()` function in the main file, use these functions to determine if the player is touching any of the bugs (where "touching" means "the player's center is within the bug's bounding box defined by its top-left x/y and width/height"). When a player is touching a bug, either print a message (using `println()`) or draw text on the screen or whatever.
+
+When you upload your code to the Dropbox, make sure you use "Archive Sketch"
+feature in the Tools menu so that you upload all of your files and
+not just your main file.

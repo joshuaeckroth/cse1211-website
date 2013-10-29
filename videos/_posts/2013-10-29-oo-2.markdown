@@ -1,0 +1,135 @@
+---
+layout: post
+title: "Video: Object-oriented programming 2"
+---
+
+# Video: Object-oriented programming 2
+
+<div style="text-align: center">
+<iframe src="http://player.vimeo.com/video/78107505?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="600" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
+
+## main file
+
+{% highlight java %}
+Ship[] ships = new Ship[200];
+
+void setup()
+{
+  colorMode(HSB, 360, 100, 100);
+  imageMode(CENTER);
+  size(800, 600);
+  for(int i = 0; i < ships.length; i++)
+  {
+    ships[i] = new Ship();
+  }
+}
+
+void draw()
+{
+  background(0);
+  
+  for(int i = 0; i < ships.length; i++)
+  {
+    ships[i].drawShip();
+  }
+  
+  stroke(255);
+  strokeWeight(2);
+  for(int i = 0; i < ships.length; i++)
+  {
+    Ship closest = findClosestShip(ships[i]);
+    
+    ships[i].setHue(closest.getHue());
+    
+    line(ships[i].getX(), ships[i].getY(),
+         closest.getX(), closest.getY());
+  }
+    
+  for(int i = 0; i < ships.length; i++)
+  {
+    ships[i].moveRandomly();
+  }
+}
+
+float distShips(Ship s1, Ship s2)
+{
+  float d = sqrt(pow(s1.getX() - s2.getX(), 2.0) +
+                 pow(s1.getY() - s2.getY(), 2.0));
+  return d;
+}
+
+Ship findClosestShip(Ship s)
+{
+  float currentClosestDist = width*height;
+  Ship currentClosestShip = null;
+  for(int i = 0; i < ships.length; i++)
+  {
+    if(ships[i] != s)
+    { 
+      float d = distShips(s, ships[i]);
+      if(d < currentClosestDist)
+      {
+        currentClosestDist = d;
+        currentClosestShip = ships[i];
+      }
+    }
+  }
+  return currentClosestShip;
+}
+{% endhighlight %}
+
+## Ship class
+
+{% highlight java %}
+class Ship
+{
+  int tintHue;
+  float x, y;
+  PImage img;
+
+  Ship()
+  {
+    x = random(0, width);
+    y = random(0, height);
+    tintHue = int(random(0, 360));
+    
+    img = loadImage("ship.png");
+  }
+  
+  void drawShip()
+  {
+    tint(tintHue, 100, 100);
+    image(img, x, y);
+  }
+  
+  void moveRandomly()
+  {
+    x += random(-2, 2);
+    y += random(-2, 2);
+    
+    x = constrain(x, 0, width);
+    y = constrain(y, 0, height);
+  }
+  
+  float getX()
+  {
+    return x;
+  }
+  
+  float getY()
+  {
+    return y;
+  }
+  
+  int getHue()
+  {
+    return tintHue;
+  }
+  
+  void setHue(int newTintHue)
+  {
+    tintHue = (50*tintHue + newTintHue)/51;
+  }
+}
+{% end highlight %}

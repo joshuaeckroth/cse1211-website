@@ -132,4 +132,4 @@ class Ship
     tintHue = (50*tintHue + newTintHue)/51;
   }
 }
-{% end highlight %}
+{% endhighlight %}

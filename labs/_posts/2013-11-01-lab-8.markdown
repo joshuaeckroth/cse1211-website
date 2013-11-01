@@ -1,0 +1,198 @@
+---
+layout: post
+title: Lab 8
+due: Nov 13, 11:59pm
+---
+
+# Lab 8
+
+This lab asks you to modify existing code. This code comes from the
+[Learning Processing](http://www.learningprocessing.com/) book by
+Daniel Shiffman (who also wrote a lot of the content on
+[processing.org](http://www.processing.org)). He coded a solar system
+demonstration. This is what it looks like (obviously, the real program
+has moving planets):
+
+<div style="text-align: center">
+<img src="/images/solar-system-original.png" alt="Daniel Shiffman's solar system" />
+</div>
+
+We want to modify his code to produce something that looks like this
+(this image is scaled down):
+
+<div style="text-align: center">
+<img src="/images/solar-system.png" alt="My solar system" />
+</div>
+
+First, you'll want to create a new project and copy-paste the code
+below. Make sure you create a new "tab" for the `Planet` class when
+you paste that code. Next, create a `data` folder in your sketch
+folder and copy the planet images from
+[planets.zip](/zips/planets.zip) into the data folder. These images
+come from [Open Clipart](http://openclipart.org).
+
+You'll also want to look at these
+[planet tables](http://www.astronomynotes.com/tables/tablesb.htm) for
+data about the size of each planet, how far it is from the sun, and
+how fast is its orbit.
+
+Here is what you have to do:
+
+- Modify the code so we are only drawing 5 planets (Mercury through
+  Jupiter; you can do more if you want).
+  
+- Modify the `Planet` class constructor so that it is given the
+  following information. You can find this information in the planet
+  tables. The constructor should receive this information in the units
+  specified (all `float` values, of course).
+  
+  - distance from the sun (in astronomical units (A.U.))
+  
+  - revolution (in days)
+  
+  - diameter (in km)
+  
+  - name of the planet (which matches the image filename)
+  
+- Using these values (distance, revolution, diameter), modify the
+  `translate()` and `rotate()` functions in the `Planet` class so that
+  each planet is drawn at the appropriate distance, orbits at the
+  appropriate speed, and its image is scaled to the appropriate
+  size. Of course, the size of each planet and how far it is from the
+  sun will not be accurately represented in your program; we actually
+  want to *see* the planets (if Jupiter fits on your screen, Mercury
+  will be too small, if you were doing it accurately). But each
+  planet's size, orbit speed, and distance from the sun should each be
+  accurate *relative to the other planets on the same dimension*. This
+  is easy to accomplish: just use a different multiplier for each
+  dimension, e.g., perhaps you want distance from the center (the sun)
+  to be `125.0*distance_in_au` pixels and orbit speed to be
+  `1.1/revolution_in_days` radians. Those multipliers worked well for
+  me.
+
+- Change the code so the sun image is drawn instead of a white
+  circle. Note, this is not related to the `Planet` class, the sun is
+  drawn separately.
+  
+- Don't forget to set the background to black.
+
+- Remove any code that is no longer needed, such as `fill()` and
+  `stroke()` in various places. Also, update the comments when you
+  modify the code. You will lose points if your code is a complete
+  mess with inaccurate comments.
+
+Hint: you might want to add `imageMode(CENTER);` to the top of the
+`setup()` function so when you draw your images with `image(0, 0, w,
+h)` they will draw with the center of the image on `0,0`. It makes
+everything easier.
+  
+Extra credit (+20pts): Draw a bunch of tiny stars. (Why not?) They
+should be randomly distributed, but they shouldn't move. You'll
+probably want to create a class called `Star` that has `x` and `y`
+variables which are set randomly in the constructor. This way, you can
+create an array of stars in `setup()`, then draw them in `draw()`;
+since each star keeps track of its own `x` and `y`, they won't move.
+
+Extra credit (+30pts): Draw each planet rotated around its own axis
+for its day-night cycle (it doesn't matter how fast it rotates). This
+can be accomplished with the use of `rotate()` in the `display()`
+function of the class.
+
+Extra credit (+50pts): Draw the moon rotating around Earth, and maybe
+some of Jupiter's moons, too. Use any one of the moon images
+provided. This is easier than you might think. Just modify the
+`Planet` class (maybe it should now be called `Satellite`) so that the
+constructor has another parameter: an array of planets or satellites
+which orbit this planet. For planets with no moons, just put `null` as
+the argument. For planets with moons, create another array (just like
+the planets array) and give that array to the planet constructor with
+the moons. Then, finally, before the planet `display()` function is
+finished, use a `for()` loop that tells each of the planet's moons (if
+the array is not `null`) to `update()` and `display()`. It's really
+that simple. You can even have moons with their own moons! Etc.
+
+## Main file
+
+{% highlight java %}
+// Learning Processing
+// Daniel Shiffman
+// http://www.learningprocessing.com
+
+// Example 14-18: Object-oriented solar system
+
+// An array of 8 planet objects
+Planet[] planets = new Planet[8];
+
+void setup() {
+  size(200,200);
+  smooth();
+  
+  // The planet objects are initialized using the counter variable
+  for (int i = 0; i < planets.length; i++ ) {
+    planets[i] = new Planet(20 + i*10,i + 8);
+  }
+}
+
+void draw() {
+  background(255);
+  
+  // Drawing the Sun
+  pushMatrix();
+  translate(width/2,height/2);
+  stroke(0);
+  fill(255);
+  ellipse(0,0,20,20);
+  
+  // Drawing all Planets
+  for (int i = 0; i < planets.length; i++ ) {
+    planets[i].update();
+    planets[i].display();
+  }
+  popMatrix();
+}
+{% endhighlight %}
+
+## Planet class
+
+{% highlight java %}
+// Learning Processing
+// Daniel Shiffman
+// http://www.learningprocessing.com
+
+// Example 14-18: Object-oriented solar system
+
+class Planet {
+  // Each planet object keeps track of its own angle of rotation.
+  float theta;      // Rotation around sun
+  float diameter;   // Size of planet
+  float distance;   // Distance from sun
+  float orbitspeed; // Orbit speed
+  
+  Planet(float distance_, float diameter_) {
+    distance = distance_;
+    diameter = diameter_;
+    theta = 0;
+    orbitspeed = random(0.01,0.03);
+  }
+  
+  void update() {
+    // Increment the angle to rotate
+    theta += orbitspeed;
+  }
+  
+  void display() {
+    // Before rotation and translation, the state of the matrix is saved with pushMatrix().
+    pushMatrix(); 
+    // Rotate orbit
+    rotate(theta); 
+    // translate out distance
+    translate(distance,0); 
+    stroke(0);
+    fill(175);
+    ellipse(0,0,diameter,diameter);
+    // Once the planet is drawn, the matrix is restored with popMatrix() so that the next planet is not affected.
+    popMatrix(); 
+  }
+}
+{% endhighlight %}
+

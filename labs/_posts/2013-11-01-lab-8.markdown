@@ -76,6 +76,15 @@ Here is what you have to do:
   
 - Don't forget to set the background to black.
 
+- Add support for moving the display up/down/left/right using the
+  keyboard (and the up/down/left/right keys). In other words, if I
+  press up, the entire display should move up. (Note: this
+  functionality only needs to be added to the main file.)
+
+- Add support for zooming the display using the +/- keys. Pressing +
+  should zoom in, - should zoom out. (Note: this
+  functionality only needs to be added to the main file.)
+
 - Remove any code that is no longer needed, such as `fill()` and
   `stroke()` in various places. Also, update the comments when you
   modify the code. You will lose points if your code is a complete

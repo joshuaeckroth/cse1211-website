@@ -1,0 +1,478 @@
+---
+layout: post
+title: Physics simulations
+---
+
+# Physics simulations
+
+## Install fisica
+
+Go to the [fisica website](http://www.ricardmarxer.com/fisica/) and
+download the ZIP (look for the "Download" section on the front page,
+left side). Create a folder called "libraries" in your "sketchbook"
+folder (where all your sketches are), and unzip the fisica library
+there. Restart Processing.
+
+After installing, you can find fisica examples by clicking the "File"
+menu, then "Examples", then scrolling to the bottom an expanding the
+item "Contributed Libraries" and then expanding "Fisica".
+
+Check out the
+[ficisa manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+and the
+[Processing Wiki](http://wiki.processing.org/w/Fisica_/_JBox2D_physics_engine).
+
+## Terms
+
+- **Body**: "Represents a body in the world. A body is an object which
+  may collide and react to forces in the world. The bodies have many
+  properties such as density, velocity, position, etc... with which we
+  can control their behavior." &mdash; from the
+  [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html). Bodies
+  have mass, which seems to be equal to the number of pixels in the
+  body. The mass affects forces and therefore affects friction,
+  collisions, etc. The mass cannot be changed directly (unless you
+  change the shape), but by using `setDensity` we can effectively
+  change the mass.
+
+- **Sensor**: "Sometimes game logic needs to know when two fixtures
+  overlap yet there should be no collision response. This is done by
+  using sensors. A sensor is a fixture that detects collision but does
+  not produce a response." &mdash; from the
+  [Box2D manual](http://www.box2d.org/manual.html)
+
+- **World**: "Represents the world where all the bodies live in. When
+  we create a world it will have the size of the app that it is
+  created in. Once the world is created we may add or remove bodies to
+  it using `add` and `remove`. We may also call `step` to advance one
+  step the simulation. Finally we can draw the world and all the
+  bodies living in it by using `draw`." &mdash; from the
+  [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+
+- **Joint**: "Represents a joint between two or more bodies. A joint
+  establishes some kind of relation between two or more
+  bodies. Depending on the specific joint the relation might be a
+  distance relation, a rotation relation or even a volume conservation
+  relation." &mdash; from the
+  [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+
+- **Static**: An object that does not move.
+
+- **Friction**: "The friction determines the ratio of the reaction
+  force tangent to a contact, when the body collides with another
+  body. Basically it can be seen as a coefficient that will control
+  how the body gets slowed down when the body slides against another
+  body. The friction of a contact of two bodies in a collision is
+  calculated from the friction values of the two bodies involved."
+  &mdash; from the
+  [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+
+- **Restitution**: "Restitution is used to make objects bounce. The
+  restitution value is usually set to be between 0 and 1. Consider
+  dropping a ball on a table. A value of zero means the ball won't
+  bounce. This is called an inelastic collision. A value of one means
+  the ball's velocity will be exactly reflected. This is called a
+  perfectly elastic collision. Restitution is combined using the
+  following formula: _restitution = max(obj1.restitution,
+  obj2.restitution)_" &mdash; from the
+  [Box2D manual](http://www.box2d.org/manual.html)
+
+- **Velocity**: just what you expect, though we use pixel values
+  rather than meters/second
+
+- **Angular velocity**: rotation velocity in radians per second
+
+- **Damping**: "Damping is used to reduce the world velocity of
+  bodies. Damping is different than friction because friction only
+  occurs with contact. Damping is not a replacement for friction and
+  the two effects should be used together. Damping parameters should
+  be between 0 and infinity, with 0 meaning no damping, and infinity
+  meaning full damping. Normally you will use a damping value between
+  0 and 0.1. I generally do not use linear damping because it makes
+  bodies look floaty." &mdash; from the
+  [Box2D manual](http://www.box2d.org/manual.html)
+
+- **Angular damping**: "The damping constantly reduces the rotation
+  velocity of the body." &mdash; from the
+  [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+
+- **Density**: "Set the density of the body. The density will
+  determine the total mass of the body and thus it's behavior with
+  respect to collisions, bounces, inertia, joints,... When the density
+  is set, the mass of the body is recalculated automatically given
+  it's area. Note that a density of 0.0 corresponds to a mass of 0.0
+  independently of the area and the body will be considered static."
+  &mdash; from the
+  [fisica manual](http://www.ricardmarxer.com/fisica/reference/index.html)
+
+## Examples
+
+### A circle in a world with gravity
+
+{% highlight java %}
+import fisica.*;
+
+FWorld world;
+FCircle body;
+
+void setup()
+{
+  size(800, 600);
+  
+  Fisica.init(this);
+  
+  world = new FWorld();
+  
+  body = new FCircle(50);
+  body.setPosition(400, 100);
+  body.setFill(255, 0, 0);
+  body.setNoStroke();
+  
+  world.add(body);
+  
+  // possibly change the gravity (x and y components)
+  //world.setGravity(0, 300);
+}
+
+void draw()
+{
+  background(255);
+  world.step();
+  world.draw();
+}
+{% endhighlight %}
+
+### Adding a floor
+
+{% highlight java %}
+import fisica.*;
+
+FWorld world;
+FCircle body;
+FBox floor;
+
+void setup()
+{
+  size(800, 600);
+  
+  Fisica.init(this);
+  
+  world = new FWorld();
+  
+  body = new FCircle(50);
+  body.setPosition(400, 100);
+  body.setFill(255, 0, 0);
+  body.setNoStroke();
+  
+  // make the body bouncy!
+  body.setRestitution(0.75);
+  
+  floor = new FBox(800, 50);
+  // by default, position mode is CENTER
+  floor.setPosition(400, 575);
+  floor.setFill(0);
+  floor.setNoStroke();
+  floor.setStatic(true);
+  
+  world.add(body);
+  world.add(floor);
+}
+
+void draw()
+{
+  background(255);
+  world.step();
+  world.draw();
+}
+{% endhighlight %}
+
+### A slanted floor, with friction
+
+{% highlight java %}
+import fisica.*;
+
+FWorld world;
+FCircle body;
+FPoly floor;
+
+void setup()
+{
+  size(800, 600);
+  
+  Fisica.init(this);
+  
+  world = new FWorld();
+  
+  body = new FCircle(50);
+  body.setPosition(50, 100);
+  body.setFill(255, 0, 0);
+  body.setNoStroke();
+  
+  // make the body NOT bouncy!
+  body.setRestitution(0);
+  
+  // are we moving through air, honey, or a vacuum?
+  body.setDamping(0.5);
+  
+  floor = new FPoly();
+  floor.vertex(0, 300);
+  floor.vertex(0, 0);
+  floor.vertex(300, 200);
+  floor.vertex(800, 200);
+  floor.vertex(800, 300);
+
+  floor.setPosition(0, 300);
+  floor.setFill(0);
+  floor.setNoStroke();
+  floor.setStatic(true);
+  
+  // how much friction?
+  floor.setFriction(0.2);
+  
+  world.add(body);
+  world.add(floor);
+}
+
+void draw()
+{
+  background(255);
+  world.step();
+  // try this instead of world.draw()
+  world.drawDebug();
+}
+{% endhighlight %}
+
+### A pendulum
+
+{% highlight java %}
+import fisica.*;
+
+FWorld world;
+FCircle top;
+FCircle bob;
+FRevoluteJoint rod;
+
+int tick = 1;
+boolean tickedLeft = true;
+boolean tickedRight = false;
+
+void setup()
+{
+  size(800, 600);
+  
+  Fisica.init(this);
+  
+  world = new FWorld();
+  
+  top = new FCircle(10);
+  top.setPosition(400, 100);
+  top.setFill(0);
+  top.setNoStroke();
+  top.setStatic(true);
+  
+  bob = new FCircle(50);
+  bob.setPosition(0, 100);
+  bob.setFill(255, 0, 0);
+  bob.setNoStroke();
+  bob.setDamping(0);
+  
+  rod = new FRevoluteJoint(top, bob, 400, 100);
+
+  world.add(top);
+  world.add(bob);
+  world.add(rod);
+}
+
+void draw()
+{
+  background(255);
+  world.step();
+  world.draw();
+  
+  if(abs(bob.getVelocityX()) < 4)
+  {
+    if(bob.getX() > 400 && !tickedRight)
+    {
+      tick++;
+      tickedRight = true;
+      tickedLeft = false;
+    }
+    if(bob.getX() < 400 && !tickedLeft)
+    {
+      tick++;
+      tickedRight = false;
+      tickedLeft = true;
+    }
+  }
+  
+  textSize(32);
+  fill(0);
+  text(tick, 700, 50);
+}
+{% endhighlight %}
+
+### Slingshot (i.e., spring + letting go)
+
+{% highlight java %}
+import fisica.*;
+
+FWorld world;
+FCircle top;
+FCircle bob;
+FDistanceJoint spring;
+
+void setup()
+{
+  size(800, 600);
+  
+  Fisica.init(this);
+  
+  world = new FWorld();
+  
+  top = new FCircle(10);
+  top.setPosition(400, 300);
+  top.setFill(0);
+  top.setNoStroke();
+  top.setStatic(true);
+  top.setSensor(true);
+  
+  bob = new FCircle(50);
+  bob.setPosition(400, 330);
+  bob.setFill(255, 0, 0);
+  bob.setNoStroke();
+  bob.setDamping(0);
+  
+  spring = new FDistanceJoint(top, bob);
+  spring.setDamping(0.1);
+  spring.setFrequency(0.8);
+  spring.setLength(30);
+
+  world.add(top);
+  world.add(bob);
+  world.add(spring);
+}
+
+void draw()
+{
+  background(255);
+  world.step();
+  world.drawDebug();
+  
+  // let go!
+  if(bob.isTouchingBody(top))
+  {
+    world.remove(spring);
+  }
+}
+{% endhighlight %}
+
+### Angry Birds, sort of
+
+{% highlight java %}
+import fisica.*;
+
+FWorld world;
+FBox bird;
+FBox pig;
+FBox box1;
+FBox box1a;
+FBox box1b;
+FBox box1c;
+FBox box2;
+FBox box3;
+
+void setup()
+{
+  size(900, 500);
+
+  Fisica.init(this);
+
+  world = new FWorld();
+
+  bird = new FBox(50, 50);
+  PImage birdimg = loadImage("bird.png");
+  bird.attachImage(birdimg);
+  bird.setDensity(300);
+
+  pig = new FBox(50, 50);
+  PImage pigimg = loadImage("pig.png");
+  pig.attachImage(pigimg);
+
+  box1 = new FBox(30, 200);
+  box1.setFill(160, 94, 24);
+  box1.setNoStroke();
+  
+  box1a = new FBox(30, 60);
+  box1a.setFill(160, 94, 24);
+  box1a.setNoStroke();
+  
+  box1b = new FBox(30, 60);
+  box1b.setFill(160, 94, 24);
+  box1b.setNoStroke();
+  
+  box1c = new FBox(30, 60);
+  box1c.setFill(160, 94, 24);
+  box1c.setNoStroke();
+  
+  box2 = new FBox(30, 200);
+  box2.setFill(160, 94, 24);
+  box2.setNoStroke();
+  
+  box3 = new FBox(200, 30);
+  box3.setFill(250, 188, 121);
+  box3.setNoStroke();
+
+  bird.setPosition(100, 250);
+  box1.setPosition(700, 360);
+  box1a.setPosition(700, 360);
+  box1b.setPosition(700, 420);
+  box1c.setPosition(700, 480);
+  box2.setPosition(850, 360);
+  box3.setPosition(770, 260);
+  pig.setPosition(780, 460);
+  
+  world.setEdges();
+  
+  world.add(bird);
+  world.add(box1);
+  world.add(box2);
+  world.add(box3);
+  world.add(pig);
+}
+
+void draw()
+{
+  background(255);
+  
+  world.step();
+  world.draw();
+  
+  if(pig.isTouchingBody(box3))
+  {
+    noLoop();
+    textSize(32);
+    fill(0);
+    text("Win!", 420, 200);
+  }
+  
+  if(bird.isTouchingBody(box1))
+  {
+    world.remove(box1);
+    world.add(box1a);
+    world.add(box1b);
+    world.add(box1c);
+  }
+}
+
+void mouseClicked()
+{
+  // click the bird to throw it again
+  if(abs(mouseX - bird.getX()) < 75 && abs(mouseY - bird.getY()) < 75)
+  {
+    // make sure we undo noLoop() from above, if it ever occurred
+    loop();
+    bird.setPosition(100, 250);
+    bird.setVelocity(700, 0);
+  }
+}
+{% endhighlight %}

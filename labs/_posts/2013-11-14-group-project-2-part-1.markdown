@@ -71,7 +71,13 @@ Additionally, you are required to have:
 
 - A way to restart after losing.
 
-- A high score list. Allow the player with the high score to enter a
-  name or initials. This list does not have to be saved to a file, it
-  is ok if it is "forgotten" when the user quits the game.
+- A list of scores, listed in the order they were obtained (most
+  recent first). This is not a "high score" list because it does not
+  have player names and all scores are kept (not just the
+  highest). For space reasons, display only the most recent 5 or 10
+  scores (you choose how many). Show this screen when the player loses
+  (or wins). You might find the `expand()` and `shorten()` functions
+  from the
+  [array utilities](/videos/2013-09-27-array-utilities.html)
+  video to be helpful.
   
